@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,400i,700,700i");
+@import url(../fonts/league/stylesheet.css);
+html {
+  font-size: 100%; }
+  @media (min-width: 40em) {
+    html {
+      font-size: 150%; } }
+
+body {
+  background-color: #eef0f2;
+  border-top: 1rem #c60 solid;
+  color: black;
+  font-family: Rubik, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: none; }
+
+.container {
+  box-sizing: content-box;
+  margin: 0 auto;
+  max-width: 30rem;
+  padding: 2rem 2rem 2rem 4rem; }
+
+header {
+  margin: 0 0 0.5rem 0; }
+  header img {
+    border: none;
+    display: block;
+    height: auto;
+    width: 12rem; }
+  header h1 {
+    font-family: "League Gothic", Rubik, Helvetica, Arial, sans-serif;
+    font-size: 2.75rem;
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 3rem;
+    margin: 0;
+    text-transform: uppercase; }
+
+a[href] {
+  color: #c60;
+  text-decoration: none;
+  transition: all 0.5s; }
+  a[href]:hover {
+    color: #06c; }
+
+#intro {
+  margin: 0 0 1rem 0; }
+
+nav ul {
+  margin: 0;
+  padding: 0; }
+nav li {
+  display: block;
+  list-style: none;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  position: relative; }
+nav .fa,
+nav .fal,
+nav .far,
+nav .fas,
+nav .fab,
+nav .svg-inline--fa {
+  display: block;
+  left: -2rem;
+  line-height: 1.5;
+  position: absolute;
+  text-align: center;
+  width: 2rem; }
+
+footer {
+  background-color: #e9ebed; }
+  footer p {
+    font-size: 0.5rem;
+    line-height: 1.5;
+    margin: 0; }
+    footer p a[href] {
+      color: black;
+      border-bottom: 1px black dotted; }
+      footer p a[href]:hover {
+        color: #07d;
+        border-bottom: 1px #07d solid; }
+
+/*# sourceMappingURL=main.css.map */

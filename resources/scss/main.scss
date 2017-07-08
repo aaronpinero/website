@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,400i,700,700i');
+@import url(../fonts/league/stylesheet.css);
+
+$font-body:Rubik,Helvetica,Arial,sans-serif;
+$font-head:'League Gothic',Rubik,Helvetica,Arial,sans-serif;
+$font-icon:'FontAwesome';
+$color-text-body:black;
+$color-background:#eef0f2;
+$color-background-footer:#e9ebed;
+$color-link-default:#c60;
+$color-link-active:#06c;
+$color-link-active-footer:#07d;
+
+html {
+	font-size:100%;
+	@media (min-width:40em) {
+		font-size:150%;
+	}
+}
+body {
+	background-color:$color-background;
+	border-top:1rem $color-link-default solid;
+	color:$color-text-body;
+	font-family:$font-body;
+	font-size:1rem;
+	line-height:1.5;
+	margin:0;
+	padding:0;
+	-webkit-text-size-adjust:none;
+}
+.container {
+	box-sizing:content-box;
+	margin:0 auto;
+	max-width:30rem;
+	padding:2rem 2rem 2rem 4rem;
+}
+header {
+	margin:0 0 0.5rem 0;
+	img {
+		border:none;
+		display:block;
+		height:auto;
+		width:12rem;
+	}
+	h1 {
+		font-family:$font-head;
+		font-size:2.75rem;
+		font-weight:normal;
+		letter-spacing:1px;
+		line-height:3rem;
+		margin:0;
+		text-transform:uppercase;
+	}
+}
+a[href] {
+	color:#c60;
+	text-decoration:none;
+	transition:all 0.5s;
+	&:hover {
+		color:#06c;
+	}
+}
+#intro {
+	margin:0 0 1rem 0;
+}
+nav {
+	ul {
+		margin:0;
+		padding:0;
+	}
+	li {
+		display:block;
+		list-style:none;
+		margin:0 0 0.5rem 0;
+		padding:0;
+		position:relative;
+	}
+	.fa,
+	.fal,
+	.far,
+	.fas,
+	.fab,
+	.svg-inline--fa {
+		display:block;
+		left:-2rem;
+		line-height:1.5;
+		position:absolute;
+		text-align:center;
+		width:2rem;
+	}
+}
+footer {
+	background-color:#e9ebed;
+	p {
+		font-size:0.5rem;
+		line-height:1.5;
+		margin:0;
+		a[href] {
+			color:$color-text-body;
+			border-bottom:1px $color-text-body dotted;
+			&:hover {
+				color:$color-link-active-footer;
+				border-bottom:1px $color-link-active-footer solid;
+			}
+		}
+	}
+}
