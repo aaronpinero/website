@@ -33,11 +33,11 @@ body {
       background-repeat: no-repeat;
       content: "";
       display: block;
-      height: 480px;
-      left: 12.5%;
+      height: 493px;
+      left: 10%;
       position: absolute;
       top: 0;
-      width: 688px; } }
+      width: 718px; } }
 
 @-moz-keyframes fadein {
   from {
@@ -52,7 +52,7 @@ body {
 header {
   padding: 0 0 2rem 0; }
   header h1 {
-    color: #f90;
+    color: #ffa000;
     font-family: "League Gothic", Rubik, Helvetica, Arial, sans-serif;
     font-size: 3rem;
     font-weight: normal;
@@ -65,7 +65,7 @@ header {
       header h1 {
         font-size: 4.5rem; } }
     header h1:before {
-      background-image: url(../img/logo.png);
+      background-image: url(../img/logo.svg);
       background-position: top center;
       background-repeat: no-repeat;
       content: "";
@@ -80,7 +80,7 @@ a[href] {
   text-decoration: none;
   transition: all 0.5s; }
   a[href]:hover {
-    color: #f90; }
+    color: #ffa000; }
 
 p#intro {
   margin: 0 auto;
@@ -176,7 +176,7 @@ nav {
         width: 5rem;
         padding: 0.375rem; } }
     nav a[href]:hover {
-      background-color: #f90;
+      background-color: #ffa000;
       color: #333; }
     nav a[href] .inner-border {
       border: 0.125rem #333 solid;
@@ -265,7 +265,7 @@ footer {
     clear: both; }
   @media (min-width: 50em) {
     footer {
-      background-image: url(../img/workman.png);
+      background-image: url(../img/workman.svg);
       background-position: center center;
       background-repeat: no-repeat; } }
   footer p {
@@ -276,7 +276,7 @@ footer {
     footer p a[href] {
       border-bottom: 1px #888 dotted; }
       footer p a[href]:hover {
-        border-bottom: 1px #f90 solid; }
+        border-bottom: 1px #ffa000 solid; }
     @media (min-width: 50em) {
       footer p#copyright {
         float: left;

@@ -5,7 +5,7 @@ $font-body:Rubik,Helvetica,Arial,sans-serif;
 $font-head:'League Gothic',Rubik,Helvetica,Arial,sans-serif;
 $font-icon:'FontAwesome';
 $color-background:#333;
-$color-brand:#f90;
+$color-brand:#ffa000;
 $color-text-body:#ddd;
 $color-text-head:$color-brand;
 $color-text-footer:#888;
@@ -92,11 +92,11 @@ body {
 			background-repeat:no-repeat;
 			content:"";
 			display:block;
-			height:480px;
-			left:12.5%;
+			height:493px;
+			left:10%;
 			position:absolute;
 			top:0;
-			width:688px;
+			width:718px;
 		}
 	}
 }    
@@ -132,7 +132,7 @@ header {
 			font-size:4.5rem;
 		}
 		&:before {
-			background-image:url(../img/logo.png);
+			background-image:url(../img/logo.svg);
 			background-position:top center;
 			background-repeat:no-repeat;
 			content:"";
@@ -336,7 +336,7 @@ footer {
 	color:$color-text-footer;
 	padding:2rem 0;
 	@media (min-width:$break-screen-medium) {
-		background-image:url(../img/workman.png);
+		background-image:url(../img/workman.svg);
 		background-position:center center;
 		background-repeat:no-repeat;
 	}
