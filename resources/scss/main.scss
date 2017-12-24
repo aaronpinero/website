@@ -8,8 +8,8 @@ $color-background:#333;
 $color-brand:#ffa000;
 $color-text-body:#ddd;
 $color-text-head:$color-brand;
-$color-text-footer:#888;
-$color-sign-default:#888;
+$color-text-footer:#aaa;
+$color-sign-default:#aaa;
 $color-link-default:$color-text-body;
 $color-link-active:$color-brand;
 $color-link-active-footer:$color-brand;
@@ -118,6 +118,8 @@ body {
 }
 header {
 	padding:0 0 2rem 0;
+	position:relative;
+	z-index:2;
 	h1 {
 		color:$color-text-head;
 		font-family:$font-head;
@@ -156,6 +158,8 @@ p {
 	&#intro {
 		margin:0 auto;
 		max-width:22em;
+		position:relative;
+		z-index:2;
 		text-align:center;
 		@media (min-width:$break-screen-small) {
 			max-width:27em;
@@ -170,6 +174,7 @@ nav {
 	margin:0 auto;
 	max-width:60rem;
 	padding:2rem 0 1rem 0;
+	position:relative;
 	ul {
 		font-size:0;
 		margin:0;
@@ -201,7 +206,7 @@ nav {
 				height:10rem;
 				overflow:hidden;
 				margin:0 auto;
-				background-color:darken($color-sign-default,10%);
+				background-color:darken($color-sign-default,20%);
 				color:$color-sign-default;
 			}
 			&:nth-child(6n+1) {

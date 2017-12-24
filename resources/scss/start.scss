@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css?family=Overpass:400,400i,700,700i');
+@import url(../fonts/league/stylesheet.css);
+
+$font-body:Overpass,Helvetica,Arial,sans-serif;
+$font-head:'League Gothic',Rubik,Helvetica,Arial,sans-serif;
+$font-icon:'FontAwesome';
+$color-background:#f2f2f2;
+$color-brand:#c06;
+$color-text-body:#333;
+$color-text-head:$color-brand;
+$color-text-footer:#999;
+$color-link-default:$color-text-body;
+$color-link-active:$color-brand;
+$color-link-active-footer:$color-brand;
+$break-header:50em;
+$break-screen-small:35em;
+$break-screen-medium:50em;
+$break-screen-large:60em;
+
+@mixin aa_clearfix {
+	*zoom:1;
+	&:before,
+	&:after {
+		display:table;
+		content:"";
+		line-height:0;
+	}
+	&:after { clear:both; }	
+}
+@mixin aa_visuallyhidden ($type:true) {
+	@if $type == false {
+		clip:auto;
+		height:auto !important;
+		margin:0;
+		overflow:visible;
+		position:static;
+		width:auto !important;
+	}
+	@else {
+		border:0;
+		clip:rect(0 0 0 0);
+		height:1px !important;
+		margin:-1px;
+		overflow:hidden;
+		padding:0;
+		position:absolute;
+		width:1px !important;
+		&.focusable:active,
+		&.focusable:focus {
+			clip:auto;
+			height:auto;
+			margin:0;
+			overflow:visible;
+			position:static;
+			width:auto;
+		}
+	}
+}
+
+
+* {
+	box-sizing:border-box;
+}
+html {
+	font-size:100%;
+	overflow-y:scroll;
+	-webkit-text-size-adjust:100%;
+	-ms-text-size-adjust:100%;
+}
+body {
+	animation-duration:1s;
+	animation-name:fadein;
+	-moz-animation-duration:1s;
+	-moz-animation-name:fadein;
+	-webkit-animation-duration:1s;
+	-webkit-animation-name:fadein;
+	background:$color-background url(../img/start/bg.gif) top left repeat;
+	color:$color-text-body;
+	font-family:$font-body;
+	font-size:1rem;
+	line-height:1.5;
+	margin:0;
+	padding:2rem 1rem 0 1rem;
+	@media (min-width:$break-header) {
+		padding:3rem 1rem 1rem 1rem;
+	}
+	@media (min-width:$break-screen-large) {
+		&:before {
+			background-image:url(../img/start/stripes.png);
+			background-position:top left;
+			background-repeat:no-repeat;
+			content:"";
+			display:block;
+			height:493px;
+			left:10%;
+			position:absolute;
+			top:0;
+			width:718px;
+			z-index:1;
+		}
+	}
+}    
+@-moz-keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+@-webkit-keyframes fadein {
+	from {
+		opacity:0;
+	}
+	to {
+		opacity:1;
+	}
+}
+header {
+	padding:0 0 2rem 0;
+	position:relative;
+	z-index:2;
+	h1 {
+		height:6rem;
+		overflow:hidden;
+		@media (min-width:$break-header) {
+			height:7rem;
+		}
+		a {
+			display:block;
+			&:before {
+				background-image:url(../img/start/logo.svg);
+				background-position:top center;
+				background-repeat:no-repeat;
+				content:"";
+				display:block;
+				height:6rem;
+				@media (min-width:$break-header) {
+					height:7rem;
+				}
+			}
+		}
+	}
+	h2 {
+		color:$color-text-head;
+		font-size:3rem;
+		line-height:1;
+		margin:0;
+		text-align:center;
+		@media (min-width:$break-header) {
+			font-size:4.5rem;
+		}
+	}
+}
+a[href] {
+	color:$color-link-default;
+	text-decoration:none;
+	transition:all 0.5s;
+	&:hover {
+		color:$color-link-active;
+	}
+}
+p {
+	&#intro {
+		margin:0 auto;
+		max-width:22em;
+		position:relative;
+		text-align:center;
+		z-index:2;
+		@media (min-width:$break-screen-small) {
+			max-width:27em;
+		}
+		@media (min-width:$break-screen-medium) {
+			font-size:1.5rem;
+			line-height:1.5;
+		}
+	}
+}
+
+footer {
+	@include aa_clearfix;
+	color:$color-text-footer;
+	padding:2rem 0;
+	@media (min-width:$break-screen-medium) {
+		background-image:url(../img/start/workman.svg);
+		background-position:center center;
+		background-repeat:no-repeat;
+	}
+	p {
+		font-size:0.75rem;
+		line-height:1.5;
+		margin:0;
+		text-align:center;
+		a[href] {
+			border-bottom:1px $color-text-footer dotted;
+			&:hover {
+				border-bottom:1px $color-link-active-footer solid;
+			}
+		}
+		&#copyright {
+			@media (min-width:$break-screen-medium) {
+				float:left;
+				padding:0 3rem 0 0;
+				text-align:right;
+				width:50%;
+			}
+		}
+		&#credit {
+			@media (min-width:$break-screen-medium) {
+				float:right;
+				padding:0 0 0 3rem;
+				text-align:left;
+				width:50%;
+			}
+		}
+	}
+}
