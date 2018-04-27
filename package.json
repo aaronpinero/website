@@ -24,8 +24,8 @@
   "homepage": "https://aaronpinero.net",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
-    "node-sass": "^4.5.3",
+    "autoprefixer": "^7.2.6",
+    "node-sass": "^4.9.0",
     "postcss-cli": "^4.1.1"
   }
 }
