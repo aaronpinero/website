@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!--
+Font Awesome Pro 5.13.1 by @fontawesome - https://fontawesome.com
+License - https://fontawesome.com/license (Commercial License)
+-->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20190801 at Fri Feb 12 21:38:08 2021
+ By root
+Copyright (c) Font Awesome
+</metadata>
+<defs>
+<font id="FontAwesome5Pro-Regular" horiz-adv-x="512" >
+  <font-face 
+    font-family="Font Awesome 5 Pro Regular"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 5 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 -64 511.998 448"
+    underline-thickness="25"
+    underline-position="-50"
+    unicode-range="U+0020-F5AD"
+  />
+    <missing-glyph />
+    <glyph glyph-name="pen-nib" unicode="&#xf5ad;" 
+d="M493.87 352.4c24.1699 -24.1699 24.1699 -63.3506 0 -87.5205l-92.4502 -92.4502l-28.21 -99.8301c-5.08594 -17.9932 -23.6104 -37.3965 -41.3496 -43.3096l-279.86 -93.29l-52 52l93.29 279.86c5.91309 17.7393 25.3164 36.2637 43.3096 41.3496l99.8301 28.21
+l92.4502 92.4502c12.0801 12.0898 27.9199 18.1299 43.7598 18.1299c15.8408 0 31.6807 -6.04004 43.7607 -18.1299zM327.02 85.6504l28.2305 99.8398l0.290039 1.04004l-105 105l-1.0498 -0.299805l-99.8301 -28.2109
+c-5.11035 -1.44922 -9.15039 -5.30957 -10.8301 -10.3398l-77.6201 -232.85l103.59 103.59c-2.99023 6.25977 -4.7998 13.1797 -4.7998 20.5801c0 26.5098 21.4902 48 48 48s48 -21.4902 48 -48s-21.4902 -48 -48 -48c-7.40039 0 -14.3203 1.80957 -20.5801 4.7998
+l-103.59 -103.59l232.85 77.6104c5.03027 1.67969 8.90039 5.72949 10.3398 10.8301zM459.93 298.82c5.41992 5.41992 5.41992 14.2295 0 19.6396l-77.4697 77.4697c-7.96973 7.9707 -17.3496 2.29004 -19.6396 0l-74.4102 -74.4102l97.1094 -97.1094z" />
+  </font>
+</defs></svg>

@@ -1,0 +1,75 @@
+500px:
+  changes:
+    - '4.4'
+    - 5.0.0
+  label: 500px
+  search:
+    terms: []
+  styles:
+    - brands
+  unicode: f26e
+  voted: false
+behance:
+  changes:
+    - '4.1'
+    - 5.0.0
+  label: Behance
+  search:
+    terms: []
+  styles:
+    - brands
+  unicode: f1b4
+  voted: false
+codepen:
+  changes:
+    - '4.1'
+    - 5.0.0
+  label: Codepen
+  search:
+    terms: []
+  styles:
+    - brands
+  unicode: f1cb
+  voted: false
+github:
+  changes:
+    - '2'
+    - 5.0.0
+  label: GitHub
+  search:
+    terms:
+      - octocat
+  styles:
+    - brands
+  unicode: f09b
+  voted: false
+linkedin-in:
+  changes:
+    - '2'
+    - 5.0.0
+    - 5.4.1
+    - 5.8.0
+    - 5.8.1
+  label: LinkedIn In
+  search:
+    terms:
+      - linkedin
+  styles:
+    - brands
+  unicode: f0e1
+  voted: false
+pen-nib:
+  changes:
+    - 5.1.0
+  label: Pen Nib
+  search:
+    terms:
+      - design
+      - edit
+      - fountain pen
+      - update
+      - write
+  styles:
+    - regular
+  unicode: f5ad
+  voted: true

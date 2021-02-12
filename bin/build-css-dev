@@ -1,2 +1,0 @@
-node-sass --source-comments resources/scss/ -o resources/css/
-postcss resources/css/*.css --replace --config config/postcss.config.js

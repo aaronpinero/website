@@ -5,8 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-css": "./bin/build-css",
-    "build-css-dev": "./bin/build-css-dev"
+    "build-css": "./bin/build-css"
   },
   "repository": {
     "type": "git",
@@ -24,8 +23,11 @@
   "homepage": "https://aaronpinero.net",
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^7.2.6",
-    "node-sass": "^4.9.0",
-    "postcss-cli": "^4.1.1"
-  }
+    "autoprefixer": "^10.2.4",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.7"
+  },
+  "browserslist": [
+    "> 5%"
+  ]
 }

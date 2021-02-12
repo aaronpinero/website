@@ -1,1 +1,235 @@
-@import url("https://fonts.googleapis.com/css?family=Overpass:400,400i,700,700i");@import url(../fonts/league/stylesheet.css);*{box-sizing:border-box}html{font-size:100%;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{animation-duration:1s;animation-name:fadein;-moz-animation-duration:1s;-moz-animation-name:fadein;-webkit-animation-duration:1s;-webkit-animation-name:fadein;background:#f2f2f2 url(../img/start/bg.gif) top left repeat;color:#333;font-family:Overpass,Helvetica,Arial,sans-serif;font-size:1rem;line-height:1.5;margin:0;padding:2rem 1rem 0 1rem}@media (min-width: 50em){body{padding:3rem 1rem 1rem 1rem}}@media (min-width: 60em){body:before{background-image:url(../img/start/stripes.png);background-position:top left;background-repeat:no-repeat;content:"";display:block;height:493px;left:10%;position:absolute;top:0;width:718px;z-index:1}}header{padding:0 0 2rem 0;position:relative;z-index:2}header h1{height:6rem;margin:0;overflow:hidden}@media (min-width: 50em){header h1{height:7rem}}header h1 a{display:block}header h1 a:before{background-image:url(../img/start/logo.svg);background-position:top center;background-repeat:no-repeat;content:"";display:block;height:6rem}@media (min-width: 50em){header h1 a:before{height:7rem}}header h2{color:#c06;font-size:3rem;line-height:1;margin:0;text-align:center}@media (min-width: 50em){header h2{font-size:4.5rem}}a[href]{color:#333;text-decoration:none;transition:all 0.5s}a[href]:hover{color:#c06}p#intro{margin:0 auto;max-width:22em;position:relative;text-align:center;z-index:2}@media (min-width: 35em){p#intro{max-width:27em}}@media (min-width: 50em){p#intro{font-size:1.5rem;line-height:1.5}}#sections{margin:0 auto;max-width:60rem;padding:2rem 0 1rem 0;position:relative;z-index:2}#sections section{padding:1rem}#sections section h1{border-bottom:1px #ddd solid;color:#999;font-family:"League Gothic",Rubik,Helvetica,Arial,sans-serif;font-size:2rem;font-weight:normal;letter-spacing:1px;line-height:1;margin:0 0 0.5rem 0;padding:0 0 0.5rem 0;text-transform:uppercase}#sections section ul{display:flex;flex-wrap:wrap;margin:0 -1rem;padding:0}#sections section ul li{box-sizing:border-box;display:block;margin:0;padding:0 1rem;width:100%}@media (min-width: 35em){#sections section ul li{width:50%}}@media (min-width: 42.5em){#sections section ul li{width:33.333%}}@media (min-width: 60em){#sections section ul li{width:25%}}#sections section ul li a{background-color:transparent;border-radius:0.25rem;display:inline-block;color:#c06;margin:0 -0.25rem;padding:0.25rem;transition-duration:0.25s;transition-property:color,background-color}#sections section ul li a:hover{background-color:#c06;color:white}footer{*zoom:1;color:#999;padding:2rem 0}footer:before,footer:after{display:table;content:"";line-height:0}footer:after{clear:both}@media (min-width: 50em){footer{background-image:url(../img/start/workman.svg);background-position:center center;background-repeat:no-repeat}}footer p{font-size:0.75rem;line-height:1.5;margin:0;text-align:center}footer p a[href]{border-bottom:1px #999 dotted}footer p a[href]:hover{border-bottom:1px #c06 solid}@media (min-width: 50em){footer p#copyright{float:left;padding:0 3rem 0 0;text-align:right;width:50%}}@media (min-width: 50em){footer p#credit{float:right;padding:0 0 0 3rem;text-align:left;width:50%}}
+@import url("https://fonts.googleapis.com/css?family=Overpass:400,400i,700,700i");
+@import url(../fonts/league/stylesheet.css);
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  animation-duration: 1s;
+  animation-name: fadein;
+  -moz-animation-duration: 1s;
+  -moz-animation-name: fadein;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-name: fadein;
+  background: #f2f2f2 url(../img/start/bg.gif) top left repeat;
+  color: #333;
+  font-family: Overpass, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 2rem 1rem 0 1rem;
+}
+@media (min-width: 50em) {
+  body {
+    padding: 3rem 1rem 1rem 1rem;
+  }
+}
+@media (min-width: 60em) {
+  body:before {
+    background-image: url(../img/start/stripes.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    content: "";
+    display: block;
+    height: 493px;
+    left: 10%;
+    position: absolute;
+    top: 0;
+    width: 718px;
+    z-index: 1;
+  }
+}
+header {
+  padding: 0 0 2rem 0;
+  position: relative;
+  z-index: 2;
+}
+header h1 {
+  height: 6rem;
+  margin: 0;
+  overflow: hidden;
+}
+@media (min-width: 50em) {
+  header h1 {
+    height: 7rem;
+  }
+}
+header h1 a {
+  display: block;
+}
+header h1 a:before {
+  background-image: url(../img/start/logo.svg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 6rem;
+}
+@media (min-width: 50em) {
+  header h1 a:before {
+    height: 7rem;
+  }
+}
+header h2 {
+  color: #c06;
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+}
+@media (min-width: 50em) {
+  header h2 {
+    font-size: 4.5rem;
+  }
+}
+
+a[href] {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+a[href]:hover {
+  color: #c06;
+}
+
+p#intro {
+  margin: 0 auto;
+  max-width: 22em;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+@media (min-width: 35em) {
+  p#intro {
+    max-width: 27em;
+  }
+}
+@media (min-width: 50em) {
+  p#intro {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+#sections {
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 2rem 0 1rem 0;
+  position: relative;
+  z-index: 2;
+}
+#sections section {
+  padding: 1rem;
+}
+#sections section h1 {
+  border-bottom: 1px #ddd solid;
+  color: #999;
+  font-family: "League Gothic", Rubik, Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin: 0 0 0.5rem 0;
+  padding: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+#sections section ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+  padding: 0;
+}
+#sections section ul li {
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0 1rem;
+  width: 100%;
+}
+@media (min-width: 35em) {
+  #sections section ul li {
+    width: 50%;
+  }
+}
+@media (min-width: 42.5em) {
+  #sections section ul li {
+    width: 33.333%;
+  }
+}
+@media (min-width: 60em) {
+  #sections section ul li {
+    width: 25%;
+  }
+}
+#sections section ul li a {
+  background-color: transparent;
+  border-radius: 0.25rem;
+  display: inline-block;
+  color: #c06;
+  margin: 0 -0.25rem;
+  padding: 0.25rem;
+  transition-duration: 0.25s;
+  transition-property: color, background-color;
+}
+#sections section ul li a:hover {
+  background-color: #c06;
+  color: white;
+}
+
+footer {
+  *zoom: 1;
+  color: #999;
+  padding: 2rem 0;
+}
+footer:before, footer:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+footer:after {
+  clear: both;
+}
+@media (min-width: 50em) {
+  footer {
+    background-image: url(../img/start/workman.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+}
+footer p {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+}
+footer p a[href] {
+  border-bottom: 1px #999 dotted;
+}
+footer p a[href]:hover {
+  border-bottom: 1px #c06 solid;
+}
+@media (min-width: 50em) {
+  footer p#copyright {
+    float: left;
+    padding: 0 3rem 0 0;
+    text-align: right;
+    width: 50%;
+  }
+}
+@media (min-width: 50em) {
+  footer p#credit {
+    float: right;
+    padding: 0 0 0 3rem;
+    text-align: left;
+    width: 50%;
+  }
+}
+
+/*# sourceMappingURL=start.css.map */
