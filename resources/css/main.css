@@ -1,16 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=IBM+Plex+Serif&display=swap');
 @import url(../fonts/league/stylesheet.css);
-* {
-  box-sizing: border-box;
+
+:root {
+  --font-body: 'IBM Plex Serif',Georgia,serif;
+  --font-list: 'IBM Plex Sans',Helvetica,Arial,sans-serif;
+  --font-head: 'League Gothic',Rubik,Helvetica,Arial,sans-serif;
+  --color-background: #333;
+  --color-brand: #ffa000;
+  --color-text-body: #ddd;
+  --break-screen-medium: 50em;
 }
 
 html {
-  font-size: 100%;
+  font-size: 125%;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-
 body {
   animation-duration: 1s;
   animation-name: fadein;
@@ -18,340 +24,104 @@ body {
   -moz-animation-name: fadein;
   -webkit-animation-duration: 1s;
   -webkit-animation-name: fadein;
-  background: #333 url(../img/bg.gif) top left repeat;
-  color: #ddd;
-  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
+  background: var(--color-background) url(../img/bg.gif) top left repeat;
+  color: var(--color-text-body);
+  font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.5;
   margin: 0;
-  padding: 2rem 1rem 0 1rem;
+  padding: 2rem;
 }
-@media (min-width: 50em) {
-  body {
-    padding: 3rem 1rem 1rem 1rem;
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
-@media (min-width: 60em) {
-  body:before {
-    background-image: url(../img/stripes.png);
-    background-position: top left;
-    background-repeat: no-repeat;
-    content: "";
-    display: block;
-    height: 493px;
-    left: 10%;
-    position: absolute;
-    top: 0;
-    width: 718px;
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
-header {
-  padding: 0 0 2rem 0;
-  position: relative;
-  z-index: 2;
+#page {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 32rem;
 }
-header h1 {
-  color: #ffa000;
-  font-family: "League Gothic", Rubik, Helvetica, Arial, sans-serif;
-  font-size: 3rem;
+a {
+  color: white;
+}
+a:hover,
+a:active {
+  color: var(--color-brand);
+}
+h1 {
+  color: var(--color-brand);
+  font-family: var(--font-head);
+  font-size: 3.5rem;
   font-weight: normal;
   letter-spacing: 1px;
   line-height: 1;
-  margin: 0;
-  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
   text-transform: uppercase;
 }
-@media (min-width: 50em) {
-  header h1 {
-    font-size: 4.5rem;
-  }
+h2 {
+  color: #ff00a0;
+  font-family: var(--font-head);
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
-header h1:before {
-  background-image: url(../img/logo.svg);
-  background-position: top center;
-  background-repeat: no-repeat;
-  content: "";
+#intro {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+ul {
   display: block;
-  height: 6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-@media (min-width: 50em) {
-  header h1:before {
-    height: 7rem;
+li {
+  display: block;
+  font-family: var(--font-list);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+li + li {
+  margin-top: 0.5rem;
+}
+@media (min-width: 50rem) {
+  body {
+    padding: 3rem;
   }
-}
-
-a[href] {
-  color: #ddd;
-  text-decoration: none;
-  transition: all 0.5s;
-}
-a[href]:hover {
-  color: #ffa000;
-}
-
-p#intro {
-  margin: 0 auto;
-  max-width: 22em;
-  position: relative;
-  z-index: 2;
-  text-align: center;
-}
-@media (min-width: 35em) {
-  p#intro {
-    max-width: 27em;
+  #page {
+    max-width: 40rem;
   }
-}
-@media (min-width: 50em) {
-  p#intro {
+  h1 {
+    font-size: 4rem;
+  }
+  #intro {
     font-size: 1.5rem;
     line-height: 1.5;
   }
-}
-
-nav {
-  margin: 0 auto;
-  max-width: 60rem;
-  padding: 2rem 0 1rem 0;
-  position: relative;
-}
-nav ul {
-  font-size: 0;
-  margin: 0;
-  padding: 0;
-}
-@media (min-width: 60em) {
-  nav ul {
-    text-align: center;
+  .cols {
+    display: flex;
   }
-}
-nav li {
-  display: block;
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
-  position: relative;
-}
-@media (min-width: 35em) {
-  nav li {
-    display: inline-block;
-    padding: 0 1rem;
-    margin: 1rem 0;
+  .cols > * {
     width: 50%;
   }
 }
-@media (min-width: 60em) {
-  nav li {
-    position: relative;
-    width: 12.5%;
-  }
-  nav li:after {
-    border-radius: 0.25rem;
-    content: " ";
-    display: block;
-    width: 0.5rem;
-    height: 10rem;
-    overflow: hidden;
-    margin: 0 auto;
-    background-color: #777777;
-    color: #aaa;
-  }
-  nav li:nth-child(6n+1) {
-    top: 0;
-  }
-  nav li:nth-child(6n+1) .shadow {
-    transform: scaleY(0.15) skewX(-12deg);
-  }
-  nav li:nth-child(6n+2) {
-    top: 0.25rem;
-  }
-  nav li:nth-child(6n+2) .shadow {
-    transform: scaleY(0.15) skewX(-8deg);
-  }
-  nav li:nth-child(6n+3) {
-    top: -0.5rem;
-  }
-  nav li:nth-child(6n+3) .shadow {
-    transform: scaleY(0.15) skewX(-4deg);
-  }
-  nav li:nth-child(6n+4) {
-    top: 0;
-  }
-  nav li:nth-child(6n+4) .shadow {
-    transform: scaleY(0.15) skewX(4deg);
-  }
-  nav li:nth-child(6n+5) {
-    top: 0.25rem;
-  }
-  nav li:nth-child(6n+5) .shadow {
-    transform: scaleY(0.15) skewX(8deg);
-  }
-  nav li:nth-child(6n+6) {
-    top: -0.25rem;
-  }
-  nav li:nth-child(6n+6) .shadow {
-    transform: scaleY(0.15) skewX(12deg);
-  }
-}
-nav a[href] {
-  background-color: #aaa;
-  border-radius: 0.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  color: #333;
-  display: block;
-  font-family: "League Gothic", Rubik, Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
-  line-height: 1;
-  margin: 0;
-  padding: 0.25rem;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-@media (min-width: 60em) {
-  nav a[href] {
-    height: 5rem;
-    margin: 0 auto;
-    transform: rotate(45deg);
-    width: 5rem;
-    padding: 0.375rem;
-  }
-}
-nav a[href]:hover {
-  background-color: #ffa000;
-  color: #333;
-}
-nav a[href] .inner-border {
-  border: 0.125rem #333 solid;
-  border-radius: 0.125rem;
-  display: block;
-  height: 100%;
-  padding: 1rem;
-  width: 100%;
-}
-@media (min-width: 60em) {
-  nav a[href] .label {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px !important;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px !important;
-  }
-  nav a[href] .label.focusable:active, nav a[href] .label.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-  }
-}
-nav .fa,
-nav .fal,
-nav .far,
-nav .fas,
-nav .fab,
-nav .svg-inline--fa {
-  display: inline-block;
-  line-height: 1.5;
-  margin-right: 0.5rem;
-  text-align: center;
-  width: 2rem;
-}
-@media (min-width: 60em) {
-  nav .fa,
-nav .fal,
-nav .far,
-nav .fas,
-nav .fab,
-nav .svg-inline--fa {
-    font-size: 2rem;
-    line-height: 1;
-    margin: 0;
-    transform: rotate(-45deg);
-    width: auto;
-  }
-}
-@media (min-width: 60em) {
-  nav .shadow {
-    bottom: 0;
-    display: block;
-    left: 0;
-    position: absolute;
-    width: 100%;
-    transform-origin: bottom center;
-    opacity: 0.2;
-    z-index: -1;
-  }
-  nav .shadow:before {
-    content: " ";
-    display: block;
-    width: 4.75rem;
-    height: 4.75rem;
-    margin: 0 auto;
-    background-color: #000;
-    transform: rotate(45deg);
-    transform-origin: 50% 50%;
-  }
-  nav .shadow:after {
-    border-radius: 0.25rem;
-    content: " ";
-    display: block;
-    margin: 0 auto;
-    background-color: #000;
-    width: 0.5rem;
-    height: 10rem;
-  }
-}
-
-footer {
-  *zoom: 1;
-  color: #aaa;
-  padding: 2rem 0;
-}
-footer:before, footer:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-footer:after {
-  clear: both;
-}
-@media (min-width: 50em) {
-  footer {
-    background-image: url(../img/workman.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-}
-footer p {
-  font-size: 0.75rem;
-  line-height: 1.5;
-  margin: 0;
-  text-align: center;
-}
-footer p a[href] {
-  border-bottom: 1px #aaa dotted;
-}
-footer p a[href]:hover {
-  border-bottom: 1px #ffa000 solid;
-}
-@media (min-width: 50em) {
-  footer p#copyright {
-    float: left;
-    padding: 0 3rem 0 0;
-    text-align: right;
-    width: 50%;
-  }
-}
-@media (min-width: 50em) {
-  footer p#credit {
-    float: right;
-    padding: 0 0 0 3rem;
-    text-align: left;
-    width: 50%;
-  }
-}
-
-/*# sourceMappingURL=main.css.map */
