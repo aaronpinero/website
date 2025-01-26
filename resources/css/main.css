@@ -1,49 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=IBM+Plex+Serif&display=swap');
-@import url(../fonts/league/stylesheet.css);
-
+@import "normalize.css" layer(normalize);
+@import "../fonts/league/stylesheet.css" layer(fonts);
 :root {
-  --font-body: 'IBM Plex Serif',Georgia,serif;
-  --font-list: 'IBM Plex Sans',Helvetica,Arial,sans-serif;
-  --font-head: 'League Gothic',Rubik,Helvetica,Arial,sans-serif;
-  --color-background: #222;
-  --color-brand: #ffa000;
-  --color-text-body: #ddd;
+  --color-background: hsl(215,20%,30%);
+  --color-brand: hsl(35,100%,50%);
+  --color-text-body: hsl(215,20%,85%);
   --break-screen-medium: 50em;
-}
-
-html {
-  font-size: 112.5%;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+  --font-serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, serif;
+  --font-league: "League Gothic";
 }
 body {
   animation-duration: 1s;
   animation-name: fadein;
-  -moz-animation-duration: 1s;
-  -moz-animation-name: fadein;
-  -webkit-animation-duration: 1s;
-  -webkit-animation-name: fadein;
   background-color: var(--color-background);
-  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%226px%22%20height%3D%2212px%22%20viewBox%3D%220%200%206%2012%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%3E%3Cline%20x1%3D%226%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%2212%22%20stroke%3D%22rgba%28255%2C255%2C255%2C0.05%29%22%20%2F%3E%3C%2Fsvg%3E');
-  background-repeat: repeat;
   color: var(--color-text-body);
-  font-family: var(--font-body);
-  font-size: 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
   line-height: 1.5;
   margin: 0;
   padding: 2rem;
-}
-
-@-moz-keyframes fadein {
-  from {
-    opacity: 0;
+  &::before,
+  &::after {
+    background-image: repeating-linear-gradient(-45deg, hsla(35,100%,80%,0.33) 0px, hsla(35,100%,80%,0.33) 1px, transparent 0px, transparent 50%);
+    background-repeat: repeat;
+    background-size: 8px 8px;
+    border-radius: 4px;
+    content: "";
+    display: block;
+    height: 2rem;
   }
-  to {
-    opacity: 1;
-  }
 }
-@-webkit-keyframes fadein {
+@keyframes fadein {
   from {
     opacity: 0;
   }
@@ -52,78 +38,142 @@ body {
   }
 }
 #page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  max-width: 32rem;
-}
-a {
-  color: white;
-}
-a:hover,
-a:active {
-  color: var(--color-brand);
-}
-h1 {
-  color: var(--color-brand);
-  font-family: var(--font-head);
-  font-size: 3.5rem;
-  font-weight: normal;
-  letter-spacing: 1px;
-  line-height: 1;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
-h2 {
-  color: #ff00a0;
-  font-family: var(--font-head);
-  font-size: 2rem;
-  font-weight: normal;
-  letter-spacing: 1px;
-  line-height: 1;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-}
-#intro {
-  font-size: 1.25rem;
-  line-height: 1.5;
-  margin-bottom: 2rem;
-}
-ul {
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-li {
-  display: block;
-  font-family: var(--font-list);
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-li + li {
-  margin-top: 0.5rem;
-}
-@media (min-width: 50rem) {
-  body {
-    padding: 3rem;
+  max-width: 30rem;
+  @media (min-width: 800px) {
+    max-width: 50rem;
   }
-  #page {
-    max-width: 40rem;
-  }
+}
+header,
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  width: 100%;
+}
+header {
   h1 {
-    font-size: 4rem;
+    margin: 0;
   }
   #intro {
     font-size: 1.5rem;
-    line-height: 1.5;
+    margin-bottom: 0;
+    @media (min-width: 800px) {
+      font-size: 1.75rem;
+    }
   }
-  .cols {
-    display: flex;
+}
+footer {
+  color: hsl(215,20%,70%);
+  font-family: var(--font-league);
+  font-size: 1.5rem;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-transform: uppercase;
+}
+#links,
+#posts {
+  h2 {
+    margin-bottom: 0.5rem;
   }
-  .cols > * {
-    width: 50%;
+}
+#links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  width: 100%;
+  @media (min-width: 800px) {
+    display: block;
+    width: 10rem;
+    & > * + * {
+      margin-top: 3rem;
+    }
   }
+  ul {
+    display: block;
+    margin-top: 0.5rem;
+    padding: 0;
+    li {
+      display: block;
+    }
+    li + li {
+      margin-top: 0.5rem;
+    }
+  }
+}
+#posts {
+  margin-top: 2.5rem;
+  width: 100%;
+  @media (min-width: 800px) {
+    display: block;
+    width: calc(100% - 16rem);
+  }
+  h2 {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px !important;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+  }
+  .date {
+    color: hsl(215,20%,70%);
+    font-family: var(--font-league);
+    font-size: 1.5rem;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    & + * {
+      margin-top: 0.5rem;
+    }
+  }
+  article.post {
+    &::after {
+      background-image: repeating-linear-gradient(-45deg, hsla(35,100%,80%,0.33) 0px, hsla(35,100%,80%,0.33) 1px, transparent 0px, transparent 50%);
+      background-repeat: repeat;
+      background-size: 8px 8px;
+      border-radius: 4px;
+      content: "";
+      display: block;
+      height: 0.5rem;
+      margin: 1.5rem auto;
+      width: 25%;
+    }
+  }
+}
+a[href] {
+  color: hsl(35,100%,57%);
+  text-decoration-color: hsla(35,100%,57%,0.5);
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: none;
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
+  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out, text-underline-offset 0.25s ease-in-out;
+  &:hover {
+    color: hsl(35,100%,70%);
+    text-decoration-color: hsla(35,100%,70%,0.9);
+    text-underline-offset: 2px;
+  }
+}
+h1 {
+  font-family: var(--font-league);
+  font-size: 6rem;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: var(--font-league);
+  font-size: 2.5rem;
+  font-weight: normal;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
