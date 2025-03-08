@@ -30,7 +30,7 @@ body {
   font-size: 1.25rem;
   line-height: 1.5;
   margin: 0px;
-  padding: clamp(1rem, calc(1rem + (2rem * (100vw - 320px) / (1080px - 320px))), 3rem);
+  padding: clamp(1rem, calc(4vw + 5px), 3rem);
 }
 @keyframes fadein {
   from {
