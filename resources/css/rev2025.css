@@ -1,0 +1,107 @@
+@import "normalize.css" layer(normalize);
+@import "../fonts/league/stylesheet.css" layer(fonts);
+@import "../fonts/raleway/stylesheet.css" layer(fonts);
+@view-transition {
+  navigation: auto;
+}
+:root {
+  --color-background: hsl(215,20%,30%);
+  --color-active: hsl(35,100%,50%);
+  --color-text-body: hsl(215,20%,90%);
+  --color-link: hsl(35,100%,60%);
+  --color-link-decoration: hsla(35,100%,60%,0.5);
+  --color-link-hover: hsl(35,100%,70%);
+  --color-link-decoration-hover: hsla(35,100%,70%,0.7);
+  --font-body: Raleway, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --font-head: "League Gothic";
+}
+body {
+  animation-duration: 1s;
+  animation-name: fadein;
+  background-color: var(--color-background);
+  background-image: repeating-linear-gradient(-45deg, hsl(215,20%,25%) 0px, hsl(215,20%,25%) 1px, transparent 0px, transparent 50%);
+  background-repeat: repeat;
+  background-size: 8px 8px;
+  color: var(--color-text-body);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0px;
+  padding: clamp(1rem, calc(1rem + (2rem * (100vw - 320px) / (1080px - 320px))), 3rem);
+}
+@keyframes fadein {
+  from {
+    opacity: 0px;
+  }
+  to {
+    opacity: 1;
+  }
+}
+a[href] {
+  color: var(--color-link);
+  text-decoration-color: var(--color-link-decoration);
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: none;
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
+  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out, text-underline-offset 0.25s ease-in-out;
+  &:hover {
+    color: var(--color-link-hover);
+    text-decoration-color: var(--color-link-decoration-hover);
+    text-underline-offset: 2px;
+  }
+}
+.small {
+  font-size: 1rem;
+}
+header#header {
+  padding-bottom: 4rem;
+  &::after {
+    background-image: repeating-linear-gradient(45deg, hsla(35,100%,50%,0.5) 0px, hsla(35,100%,50%,0.5) 1px, transparent 0px, transparent 50%);
+    background-repeat: repeat;
+    background-size: 8px 8px;
+    content: "";
+    display: block;
+    height: 2rem;
+    margin-top: 2rem;
+  }
+}
+footer#footer {
+  color: hsl(215,20%,70%);
+  line-height: 1.25;
+  padding-top: 4rem;
+  &::before {
+    background-image: repeating-linear-gradient(45deg, hsla(35,100%,50%,0.5) 0px, hsla(35,100%,50%,0.5) 1px, transparent 0px, transparent 50%);
+    background-repeat: repeat;
+    background-size: 8px 8px;
+    content: "";
+    display: block;
+    height: 2rem;
+    margin-bottom: 2rem;
+  }
+  p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+  }
+  p + p {
+    margin-top: 1rem;
+  }
+}
+header#header,
+footer#footer {
+  ul {
+    all: unset;
+    font-family: var(--font-head);
+    font-size: 1.75rem;
+    letter-spacing: 0.05em;
+    line-height: 1.14;
+    text-transform: uppercase;
+  }
+  li {
+    display: block;
+  }
+  a[href] {
+    --color-link-decoration: transparent;
+  }
+}
