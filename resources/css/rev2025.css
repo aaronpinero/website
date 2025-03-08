@@ -1,6 +1,8 @@
 @import "normalize.css" layer(normalize);
 @import "../fonts/league/stylesheet.css" layer(fonts);
 @import "../fonts/raleway/stylesheet.css" layer(fonts);
+@import "../fonts/fontawesome/css/fontawesome.min.css" layer(fonts);
+@import "../fonts/fontawesome/css/brands.min.css" layer(fonts);
 @view-transition {
   navigation: auto;
 }
@@ -8,7 +10,7 @@
 :root {
   --color-background: hsl(215,20%,30%);
   --color-active: hsl(35,100%,50%);
-  --color-text-body: hsl(215,20%,90%);
+  --color-text-body: hsl(215,20%,95%);
   --color-text-mute: hsl(215,20%,70%);
   --color-link: hsl(35,100%,60%);
   --color-link-decoration: hsla(35,100%,60%,0.5);
@@ -19,8 +21,6 @@
 }
 
 body {
-  animation-duration: 1s;
-  animation-name: fadein;
   background-color: var(--color-background);
   background-image: repeating-linear-gradient(-45deg, hsl(215,20%,25%) 0px, hsl(215,20%,25%) 1px, transparent 0px, transparent 50%);
   background-repeat: repeat;
@@ -30,11 +30,11 @@ body {
   font-size: 1.25rem;
   line-height: 1.5;
   margin: 0px;
-  padding: clamp(1rem, calc(4vw + 5px), 3rem);
+  padding: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
 }
 @keyframes fadein {
   from {
-    opacity: 0px;
+    opacity: 0;
   }
   to {
     opacity: 1;
@@ -93,10 +93,12 @@ h2 {
   --color-link-decoration: transparent;
   color: var(--color-text-mute);
   font-family: var(--font-head);
-  font-size: clamp(4rem, calc(4rem + (1rem * (100vw - 320px) / (1080px - 320px))), 5rem);
+  font-size: clamp(4rem, calc(3.58rem + 2.1vw), 5rem);
   letter-spacing: 0.03em;
   line-height: 1;
+  position: relative;
   text-transform: uppercase;
+  z-index: 1;
   ul {
     all: unset;
     display: flex;
@@ -106,29 +108,62 @@ h2 {
     all: unset;
     display: flex;
   }
-  li + li::before {
-    content: "/";
+  @media (max-width: 639px) {
+    li:first-child {
+      display: none;
+    }
+  }
+  @media (min-width: 640px) {
+    li + li::before {
+      content: "/";
+    }
   }
 }
 
 main {
   header {
-    margin-bottom: 2rem;
+    padding: clamp(4rem, calc(8.42vw + 2.32rem), 8rem) 0;
+    position: relative;
     text-align: center;
+    &::before {
+      --mask-color: rgba(0,0,0,0.2);
+      animation-name: fadein;
+      animation-duration: 3s;
+      background-image: url('../../work/jha/jha-logomark.svg');
+      background-size: max(640px, 100%);
+      background-position: center center;
+      background-repeat: no-repeat;
+      content: "";
+      height: 100%;
+      left: 0px;
+      mix-blend-mode: overlay;
+      mask-image: radial-gradient(closest-side, var(--mask-color) 50%, transparent);
+      mask-position: center center;
+      mask-repeat: no-repeat;
+      mask-size: cover;
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      z-index: 0;
+    }
     h1 {
       font-family: var(--font-head);
-      font-size: clamp(3rem, calc(3rem + (1rem * (100vw - 320px) / (1080px - 320px))), 4rem);
+      font-size: clamp(3rem, calc(2.58rem + 2.1vw), 4rem);
       font-weight: normal;
       letter-spacing: 0.03em;
       line-height: 1;
       margin-bottom: 0px;
       margin-top: 0px;
+      position: relative;
       text-transform: uppercase;
+      z-index: 1;
     }
     p {
       line-height: 1.25;
       margin-top: 0;
       margin-bottom: 0;
+      position: relative;
+      z-index: 1;
     }
     .tags {
       font-style: italic;
@@ -147,7 +182,7 @@ footer#footer {
     all: unset;
     font-family: var(--font-head);
     font-size: 1.75rem;
-    font-size: clamp(1.25rem, calc(1.25rem + (0.5rem * (100vw - 320px) / (1080px - 320px))), 1.75rem);
+    font-size: clamp(1.25rem, calc(1.04rem + 1.05vw), 1.75rem);
     letter-spacing: 0.03em;
     line-height: 1.14;
     text-transform: uppercase;
@@ -160,7 +195,7 @@ footer#footer {
   }
 }
 header#header {
-  padding-bottom: 4rem;
+  margin-bottom: 2rem;
   &::after {
     background-image: repeating-linear-gradient(45deg, hsla(35,100%,50%,0.5) 0px, hsla(35,100%,50%,0.5) 1px, transparent 0px, transparent 50%);
     background-repeat: repeat;
@@ -174,7 +209,7 @@ header#header {
 footer#footer {
   color: var(--color-text-mute);
   display: grid;
-  grid-column-gap: 3rem;
+  grid-column-gap: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
   grid-row-gap: 2rem;
   grid-template-columns: repeat(12, 1fr);
   line-height: 1.25;
@@ -190,8 +225,10 @@ footer#footer {
     height: 2rem;
   }
   & > div {
-    grid-column-start: 1;
-    grid-column-end: span 8;
+    grid-column: 1 / 13;
+    @media (min-width: 576px) {
+      grid-column: 1 / 7;
+    }
   }
   p {
     margin-bottom: 0px;
@@ -201,15 +238,20 @@ footer#footer {
   p + p {
     margin-top: 1rem;
   }
+  strong {
+    color: var(--color-text-body);
+  }
   ul {
     align-self: start;
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
     grid-column-gap: 2rem;
-    grid-row-gap: 0.5rem;
-    grid-column-start: 9;
-    grid-column-end: span 4;
-    justify-self: end;
+    grid-row-gap: 1rem;
+    grid-column: 1 / 13;
+    justify-self: start;
+    @media (min-width: 576px) {
+      justify-self: end;
+      grid-column: 7 / 13;
+    }
   }
 }

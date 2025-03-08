@@ -1,0 +1,69 @@
+---
+codepen:
+  changes:
+    - 4.1.0
+    - 5.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: brands
+    pro:
+      - family: classic
+        style: brands
+  label: Codepen
+  search:
+    terms: []
+  unicode: f1cb
+  voted: false
+drupal:
+  changes:
+    - 4.1.0
+    - 5.0.0
+    - 6.0.0-beta1
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: brands
+    pro:
+      - family: classic
+        style: brands
+  label: Drupal Logo
+  search:
+    terms: []
+  unicode: f1a9
+  voted: false
+github:
+  changes:
+    - 2.0.0
+    - 5.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: brands
+    pro:
+      - family: classic
+        style: brands
+  label: GitHub
+  search:
+    terms:
+      - octocat
+  unicode: f09b
+  voted: false
+linkedin:
+  changes:
+    - 1.0.0
+    - 5.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: brands
+    pro:
+      - family: classic
+        style: brands
+  label: LinkedIn
+  search:
+    terms:
+      - linkedin-square
+      - linkin
+  unicode: f08c
+  voted: false
