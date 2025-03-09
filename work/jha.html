@@ -28,6 +28,7 @@
               <a href="/posts/index.html">Posts</a>
             </li>
           </ul>
+          <button id="mainmenuclose">Close</button>
         </nav>
       </dialog>
     </header>
@@ -91,10 +92,13 @@
     </footer>
     <script>
       var mainmenubtn = document.querySelector('#mainmenubtn');
+      var mainmenuclose = document.querySelector('#mainmenuclose');
       var mainmenu = document.querySelector('#mainmenu');
       mainmenubtn.addEventListener('click', function(e){
-        console.log('main menu button click');
         mainmenu.showModal();
+      });
+      mainmenuclose.addEventListener('click', function(e){
+        mainmenu.close();
       });
     </script>
   </body>

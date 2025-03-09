@@ -9,6 +9,7 @@
 
 :root {
   --color-bg: hsl(215,20%,30%);
+  --color-backdrop: hsla(215,20%,30%,0.9);
   --color-bg-pattern: hsl(215,20%,25%);
   --color-fg-pattern: hsla(35,100%,50%,0.5);
   --color-text-body: hsl(215,20%,95%);
@@ -23,6 +24,7 @@
 
 .brown-blue {
   --color-bg: hsl(35,10%,20%);
+  --color-backdrop: hsla(35,10%,20%,0.9);
   --color-bg-pattern: hsl(35,10%,15%);
   --color-fg-pattern: hsla(215,100%,75%,0.5);
   --color-text-body: hsl(35,10%,95%);
@@ -150,8 +152,8 @@ main {
       content: "";
       height: 100%;
       left: 0px;
-      mix-blend-mode: overlay;
-      opacity: 0.2;
+      mix-blend-mode: multiply;
+      opacity: 0.25;
       position: absolute;
       top: 0px;
       width: 100%;
@@ -159,7 +161,7 @@ main {
     }
     &::after {
       background-image: repeating-linear-gradient(45deg, var(--color-bg-pattern) 0px, var(--color-bg-pattern) 1px, transparent 0px, transparent 50%);
-      background-size: 4px 4px;
+      background-size: 8px 8px;
       background-repeat: repeat;
       content: "";
       height: 100%;
@@ -278,5 +280,63 @@ footer#footer {
       justify-self: end;
       grid-column: 7 / 13;
     }
+  }
+}
+
+dialog {
+  transform: translateY(-20px);
+  &, &::backdrop {
+    transition:
+      display 1s allow-discrete,
+      overlay 1s allow-discrete,
+      opacity 1s ease,
+      transform 1s ease;
+    opacity: 0;
+  }
+  &[open] {
+    opacity: 1;
+    transform: translateY(0px);
+    &::backdrop {
+      opacity: 1;
+    }
+  }
+  @starting-style {
+    &[open],
+    &[open]::backdrop {
+      opacity: 0;
+    }
+    &[open] {
+      transform: translateY(20px);
+    }
+  }
+}
+#mainmenubtn,
+#mainmenuclose {
+  @media (min-width: 576px) {
+    display: none;
+  }
+}
+#mainmenu {
+  background-color: var(--color-bg);
+  border: none;
+  bottom: 0px;
+  box-sizing: border-box;
+  height: auto;
+  left: 0px;
+  margin: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
+  max-height: 100%;
+  max-width: 100%;
+  padding: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
+  right: 0px;
+  top: 0px;
+  width: auto;
+  &::backdrop {
+    background-color: var(--color-backdrop);
+    background-image: repeating-linear-gradient(45deg, var(--color-fg-pattern) 0px, var(--color-fg-pattern) 1px, transparent 0px, transparent 50%);
+    background-repeat: repeat;
+    background-size: 8px 8px;
+  }
+  @media (min-width: 576px) {
+    all: unset;
   }
 }
