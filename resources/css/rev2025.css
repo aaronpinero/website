@@ -27,9 +27,22 @@
   --color-bg: hsl(35,10%,20%);
   --color-backdrop: hsla(35,10%,20%,0.9);
   --color-bg-pattern: hsl(35,10%,15%);
-  --color-fg-pattern: hsla(215,100%,75%,0.5);
+  --color-fg-pattern: hsla(215,100%,75%,0.4);
   --color-text-body: hsl(35,10%,95%);
   --color-text-mute: hsl(35,10%,70%);
+  --color-link: hsl(215,100%,75%);
+  --color-link-decoration: hsla(215,100%,75%,0.5);
+  --color-link-hover: hsl(215,100%,90%);
+  --color-link-decoration-hover: hsla(215,100%,90%,0.7);
+}
+
+.green-pink {
+  --color-bg: hsl(140,20%,90%);
+  --color-backdrop: hsla(140,20%,90%,0.9);
+  --color-bg-pattern: hsl(140,20%,95%);
+  --color-fg-pattern: hsla(140,40%,25%,0.5);
+  --color-text-body: hsl(140,20%,25%);
+  --color-text-mute: hsl(140,20%,40%);
   --color-link: hsl(215,100%,75%);
   --color-link-decoration: hsla(215,100%,75%,0.5);
   --color-link-hover: hsl(215,100%,90%);
