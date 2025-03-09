@@ -426,6 +426,13 @@
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
 readers do not read off random characters that represent icons */
+.fa-bars { --fa: "\f0c9"; --fa--fa: "\f0c9\f0c9"; }
+.fa-close { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-multiply { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-navicon { --fa: "\f0c9"; --fa--fa: "\f0c9\f0c9"; }
+.fa-remove { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-times { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-xmark { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
 
 .sr-only,
 .fa-sr-only {
@@ -471,4 +478,24 @@ readers do not read off random characters that represent icons */
 .fa-drupal { --fa: "\f1a9"; --fa--fa: "\f1a9\f1a9"; }
 .fa-github { --fa: "\f09b"; --fa--fa: "\f09b\f09b"; }
 .fa-linkedin { --fa: "\f08c"; --fa--fa: "\f08c\f08c"; }
+
+/*!
+ * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license (Commercial License)
+ * Copyright 2024 Fonticons, Inc.
+ */
+:root, :host {
+  --fa-style-family-sharp: 'Font Awesome 6 Sharp';
+  --fa-font-sharp-regular: normal 400 1em/1 'Font Awesome 6 Sharp'; }
+
+@font-face {
+  font-family: 'Font Awesome 6 Sharp';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("../webfonts/fa-sharp-regular-400.woff2") format("woff2"), url("../webfonts/fa-sharp-regular-400.ttf") format("truetype"); }
+
+.fasr,
+.fa-regular {
+  font-weight: 400; }
 

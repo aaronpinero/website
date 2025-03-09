@@ -426,6 +426,13 @@
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
 readers do not read off random characters that represent icons */
+.fa-bars { --fa: "\f0c9"; --fa--fa: "\f0c9\f0c9"; }
+.fa-close { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-multiply { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-navicon { --fa: "\f0c9"; --fa--fa: "\f0c9\f0c9"; }
+.fa-remove { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-times { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
+.fa-xmark { --fa: "\f00d"; --fa--fa: "\f00d\f00d"; }
 
 .sr-only,
 .fa-sr-only {

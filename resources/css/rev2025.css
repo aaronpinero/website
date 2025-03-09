@@ -3,6 +3,7 @@
 @import "../fonts/raleway/stylesheet.css" layer(fonts);
 @import "../fonts/fontawesome/css/fontawesome.min.css" layer(fonts);
 @import "../fonts/fontawesome/css/brands.min.css" layer(fonts);
+@import "../fonts/fontawesome/css/sharp-regular.min.css" layer(fonts);
 @view-transition {
   navigation: auto;
 }
@@ -103,6 +104,26 @@ h2 {
   font-size: 1rem;
 }
 
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px !important;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px !important;
+  &.focusable:active,
+  &.focusable:focus {
+    clip: autoauto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
 .breadcrumb {
   --color-link: var(--color-text-mute);
   --color-link-decoration: transparent;
@@ -160,7 +181,7 @@ main {
       z-index: -1;
     }
     &::after {
-      background-image: repeating-linear-gradient(45deg, var(--color-bg-pattern) 0px, var(--color-bg-pattern) 1px, transparent 0px, transparent 50%);
+      background-image: repeating-linear-gradient(45deg, var(--color-bg-pattern) 0px, var(--color-bg-pattern) 2px, transparent 0px, transparent 50%);
       background-size: 8px 8px;
       background-repeat: repeat;
       content: "";
@@ -208,10 +229,8 @@ footer#footer {
   ul {
     all: unset;
     font-family: var(--font-head);
-    font-size: 1.75rem;
-    font-size: clamp(1.25rem, calc(1.04rem + 1.05vw), 1.75rem);
     letter-spacing: 0.03em;
-    line-height: 1.14;
+    line-height: 1;
     text-transform: uppercase;
   }
   li {
@@ -222,6 +241,10 @@ footer#footer {
   }
 }
 header#header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-bottom: 2rem;
   &::after {
     background-image: repeating-linear-gradient(45deg, var(--color-fg-pattern) 0px, var(--color-fg-pattern) 1px, transparent 0px, transparent 50%);
@@ -231,6 +254,13 @@ header#header {
     display: block;
     height: 2rem;
     margin-top: 2rem;
+    width: 100%;
+  }
+  .logo {
+    height: 28px;
+    margin: 0;
+    overflow: hidden;
+    width: 28px;
   }
 }
 footer#footer {
@@ -271,6 +301,7 @@ footer#footer {
   ul {
     align-self: start;
     display: grid;
+    font-size: clamp(1.25rem, calc(1.04rem + 1.05vw), 1.75rem);
     grid-template-columns: auto auto;
     grid-column-gap: 2rem;
     grid-row-gap: 1rem;
@@ -283,14 +314,56 @@ footer#footer {
   }
 }
 
-dialog {
+#mainmenubtn,
+#mainmenuclose {
+  @media (min-width: 576px) {
+    display: none;
+  }
+}
+#mainmenuclose {
+  background-color: transparent;
+  border: none;
+  color: var(--color-link);
+  cursor: pointer;
+  font-size: 2rem;
+  height: 3rem;
+  line-height: 3rem;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  right: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
+  text-align: center;
+  top: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
+  transition: color 0.25s, background-color 0.25s;
+  width: 3rem;
+  z-index: 3;
+  &:hover {
+    background-color: var(--color-link);
+    color: var(--color-bg);
+  }
+}
+#mainmenu {
+  background-color: var(--color-bg);
+  border: none;
+  bottom: 0px;
+  box-sizing: border-box;
+  height: auto;
+  left: 0px;
+  margin: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
+  max-height: 100%;
+  max-width: 100%;
+  padding: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
+  right: 0px;
+  top: 0px;
+  width: auto;
+  
   transform: translateY(-20px);
   &, &::backdrop {
     transition:
-      display 1s allow-discrete,
-      overlay 1s allow-discrete,
-      opacity 1s ease,
-      transform 1s ease;
+      display 0.5s allow-discrete,
+      overlay 0.5s allow-discrete,
+      opacity 0.5s ease,
+      transform 0.5s ease;
     opacity: 0;
   }
   &[open] {
@@ -309,27 +382,7 @@ dialog {
       transform: translateY(20px);
     }
   }
-}
-#mainmenubtn,
-#mainmenuclose {
-  @media (min-width: 576px) {
-    display: none;
-  }
-}
-#mainmenu {
-  background-color: var(--color-bg);
-  border: none;
-  bottom: 0px;
-  box-sizing: border-box;
-  height: auto;
-  left: 0px;
-  margin: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
-  max-height: 100%;
-  max-width: 100%;
-  padding: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
-  right: 0px;
-  top: 0px;
-  width: auto;
+  
   &::backdrop {
     background-color: var(--color-backdrop);
     background-image: repeating-linear-gradient(45deg, var(--color-fg-pattern) 0px, var(--color-fg-pattern) 1px, transparent 0px, transparent 50%);
@@ -338,5 +391,19 @@ dialog {
   }
   @media (min-width: 576px) {
     all: unset;
+  }
+  
+  nav ul {
+    font-size: 3rem;
+    @media (min-width: 576px) {
+      display: flex;
+      column-gap: 2rem;
+      font-size: 1.75rem;
+    }
+    li {
+      @media (max-width: 575px) {
+        margin-top: 1rem;
+      }
+    }
   }
 }
