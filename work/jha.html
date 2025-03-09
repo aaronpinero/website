@@ -10,23 +10,26 @@
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="../resources/css/rev2025.css">
   </head>
-  <body class="slate-orange">
+  <body class="">
     <a class="visually-hidden" href="#main">Skip to main content</a>
     <header id="header">
       <h1 class="logo">Aaron Pinero</h1>
-      <nav>
-        <ul>
-          <li>
-            <a href="/index.html">Home</a>
-          </li>
-          <li>
-            <a href="/work/index.html">Work</a>
-          </li>
-          <li>
-            <a href="/posts/index.html">Posts</a>
-          </li>
-        </ul>
-      </nav>
+      <button id="mainmenubtn">Menu</button>
+      <dialog id="mainmenu">
+        <nav>
+          <ul>
+            <li>
+              <a href="/index.html">Home</a>
+            </li>
+            <li>
+              <a href="/work/index.html">Work</a>
+            </li>
+            <li>
+              <a href="/posts/index.html">Posts</a>
+            </li>
+          </ul>
+        </nav>
+      </dialog>
     </header>
     <main id="main">
       <header>
@@ -86,5 +89,13 @@
         </li>
       </ul>
     </footer>
+    <script>
+      var mainmenubtn = document.querySelector('#mainmenubtn');
+      var mainmenu = document.querySelector('#mainmenu');
+      mainmenubtn.addEventListener('click', function(e){
+        console.log('main menu button click');
+        mainmenu.showModal();
+      });
+    </script>
   </body>
 </html>
