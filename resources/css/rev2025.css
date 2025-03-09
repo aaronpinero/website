@@ -21,6 +21,8 @@
   --color-link-decoration-hover: hsla(35,100%,70%,0.7);
   --font-body: Raleway, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
   --font-head: "League Gothic";
+  --banner-mix-mode: multiply;
+  --banner-opacity: 0.25;
 }
 
 .brown-blue {
@@ -34,6 +36,8 @@
   --color-link-decoration: hsla(215,100%,75%,0.5);
   --color-link-hover: hsl(215,100%,90%);
   --color-link-decoration-hover: hsla(215,100%,90%,0.7);
+  --banner-mix-mode: multiply;
+  --banner-opacity: 0.25;
 }
 
 .green-pink {
@@ -43,10 +47,12 @@
   --color-fg-pattern: hsla(140,40%,25%,0.5);
   --color-text-body: hsl(140,20%,25%);
   --color-text-mute: hsl(140,20%,40%);
-  --color-link: hsl(215,100%,75%);
-  --color-link-decoration: hsla(215,100%,75%,0.5);
-  --color-link-hover: hsl(215,100%,90%);
-  --color-link-decoration-hover: hsla(215,100%,90%,0.7);
+  --color-link: hsl(310,60%,50%);
+  --color-link-decoration: hsla(310,60%,50%,0.5);
+  --color-link-hover: hsl(310,60%,35%);
+  --color-link-decoration-hover: hsla(310,60%,35%,0.7);
+  --banner-mix-mode: overlay;
+  --banner-opacity: 0.4;
 }
 
 body {
@@ -107,6 +113,27 @@ figure {
     line-height: 1.25;
     margin-top: 1rem;
   }
+  main & {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 640px;
+    &.full {
+      @media (min-width: 800px) {
+        max-width: none;
+      }
+    }
+  }
+  main .figures & {
+    @media (min-width: 800px) {
+      margin-left: 0px;
+      margin-right: 0px;
+      max-width: none;
+      img {
+        height: var(--height);
+        width: auto;
+      }
+    }
+  }
 }
 
 h2 {
@@ -143,7 +170,7 @@ h2 {
   color: var(--color-text-mute);
   font-family: var(--font-head);
   font-size: clamp(4rem, calc(3.58rem + 2.1vw), 5rem);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   line-height: 1;
   position: relative;
   text-transform: uppercase;
@@ -186,8 +213,8 @@ main {
       content: "";
       height: 100%;
       left: 0px;
-      mix-blend-mode: multiply;
-      opacity: 0.25;
+      mix-blend-mode: var(--banner-mix-mode);
+      opacity: var(--banner-opacity);
       position: absolute;
       top: 0px;
       width: 100%;
@@ -209,12 +236,11 @@ main {
       font-family: var(--font-head);
       font-size: clamp(3rem, calc(2.58rem + 2.1vw), 4rem);
       font-weight: normal;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.01em;
       line-height: 1;
       margin-bottom: 0px;
       margin-top: 0px;
       position: relative;
-      text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
       text-transform: uppercase;
       z-index: 1;
     }
@@ -223,7 +249,6 @@ main {
       margin-top: 0;
       margin-bottom: 0;
       position: relative;
-      text-shadow: 0px 1px 2px rgba(0,0,0,0.5);
       z-index: 1;
     }
     .tags {
@@ -235,6 +260,12 @@ main {
     margin-right: auto;
     max-width: 640px;
   }
+  .figures {
+    @media (min-width: 800px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 header#header,
@@ -242,7 +273,7 @@ footer#footer {
   ul {
     all: unset;
     font-family: var(--font-head);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.01em;
     line-height: 1;
     text-transform: uppercase;
   }
@@ -270,12 +301,13 @@ header#header {
     width: 100%;
   }
   .logo {
-    background-color: var(--color-text-body);
+    background-color: var(--color-text-mute);
     mask-image: url(../images/logo.svg);
     mask-size: cover;
-    height: 1.75rem;
+    height: 2rem;
     margin: 0;
-    width: 1.75rem;
+    text-indent: 2rem;
+    width: 2rem;
   }
 }
 footer#footer {
@@ -333,6 +365,33 @@ footer#footer {
 #mainmenuclose {
   @media (min-width: 576px) {
     display: none;
+  }
+}
+#mainmenubtn {
+  background-color: transparent;
+  border: none;
+  color: var(--color-link);
+  cursor: pointer;
+  font-family: var(--font-head);
+  font-size: 1.75rem;
+  height: 1.75rem;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+  transition: color 0.25s, background-color 0.25s;
+  text-decoration-color: transparent;
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: none;
+  text-decoration-style: solid;
+  text-decoration-thickness: 4px;
+  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out, text-underline-offset 0.25s ease-in-out;
+  &:hover {
+    color: var(--color-link-hover);
+    text-decoration-color: var(--color-link-decoration-hover);
+    text-underline-offset: 2px;
   }
 }
 #mainmenuclose {
