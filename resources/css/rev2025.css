@@ -8,36 +8,41 @@
   navigation: auto;
 }
 
-:root {
-  --color-bg: hsl(215,20%,30%);
-  --color-backdrop: hsla(215,20%,30%,0.9);
-  --color-bg-pattern: hsl(215,20%,25%);
-  --color-fg-pattern: hsla(35,100%,50%,0.5);
-  --color-text-body: hsl(215,20%,95%);
-  --color-text-mute: hsl(215,20%,70%);
-  --color-link: hsl(35,100%,60%);
-  --color-link-decoration: hsla(35,100%,60%,0.5);
-  --color-link-hover: hsl(35,100%,70%);
-  --color-link-decoration-hover: hsla(35,100%,70%,0.7);
+body {
+  --color-fg-max: white;
+  --color-backdrop: oklch(from var(--color-bg) l c h / 0.9);
+  --color-bg-pattern: oklch(from var(--color-bg) calc(l - 0.045) c h);
+  --color-fg-pattern: oklch(from var(--color-fg) calc(l - 0.045) c h / 0.5);
+  --color-text-body: oklch(from var(--color-bg) calc(l + 0.58) c h);
+  --color-text-mute: oklch(from var(--color-bg) calc(l + 0.37) c h);
+  --color-link: var(--color-fg);
+  --color-link-decoration: oklch(from var(--color-fg) l c h / 0.5);
+  --color-link-hover: oklch(from var(--color-fg) calc(l + 0.09) c h);
+  --color-link-decoration-hover: oklch(from var(--color-fg) calc(l + 0.09) c h);
   --font-body: Raleway, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
   --font-head: "League Gothic";
   --banner-mix-mode: multiply;
   --banner-opacity: 0.25;
 }
 
+.slate-orange {
+  --color-bg: oklch(0.35 0.02 245);
+  --color-fg: oklch(0.73 0.16 65);
+}
+
 .brown-blue {
-  --color-bg: hsl(35,10%,20%);
-  --color-backdrop: hsla(35,10%,20%,0.9);
-  --color-bg-pattern: hsl(35,10%,15%);
-  --color-fg-pattern: hsla(215,100%,75%,0.4);
-  --color-text-body: hsl(35,10%,95%);
-  --color-text-mute: hsl(35,10%,70%);
-  --color-link: hsl(215,100%,75%);
-  --color-link-decoration: hsla(215,100%,75%,0.5);
-  --color-link-hover: hsl(215,100%,90%);
-  --color-link-decoration-hover: hsla(215,100%,90%,0.7);
-  --banner-mix-mode: multiply;
-  --banner-opacity: 0.25;
+  --color-bg: oklch(0.32 0.02 75);
+  --color-fg: oklch(0.71 0.1 255);
+}
+
+.jha {
+  --color-bg: oklch(0.32 0.01 44);
+  --color-fg: oklch(0.75 0.11 144);
+}
+
+.owl {
+  --color-bg: oklch(0.32 0.02 302);
+  --color-fg: oklch(0.72 0.13 83);
 }
 
 .green-pink {
@@ -81,14 +86,17 @@ a[href] {
   text-decoration-color: var(--color-link-decoration);
   text-decoration-line: underline;
   text-underline-offset: 4px;
-  text-decoration-skip-ink: none;
+  text-decoration-skip-ink: all;
   text-decoration-style: solid;
-  text-decoration-thickness: 4px;
-  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out, text-underline-offset 0.25s ease-in-out;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out, text-decoration-thickness 0.25s ease-in-out;
   &:hover {
     color: var(--color-link-hover);
     text-decoration-color: var(--color-link-decoration-hover);
-    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+  }
+  [class^="fa-"] {
+    margin-right: 0.2em;
   }
 }
 
@@ -125,12 +133,17 @@ figure {
   }
   main .figures & {
     @media (min-width: 800px) {
+      display: table;
       margin-left: 0px;
       margin-right: 0px;
       max-width: none;
       img {
         height: var(--height);
         width: auto;
+      }
+      figcaption {
+        caption-side: bottom;
+        display: table-caption;
       }
     }
   }
@@ -207,7 +220,7 @@ main {
     text-align: center;
     &::before {
       background-size: max(640px, 125%);
-      background-position: center center;
+      background-position: top 35% center;
       background-repeat: no-repeat;
       content: "";
       height: 100%;
@@ -238,6 +251,7 @@ main {
       z-index: 0;
     }
     h1 {
+      color: var(--color-fg-max);
       font-family: var(--font-head);
       font-size: clamp(3rem, calc(2.58rem + 2.1vw), 4rem);
       font-weight: normal;
@@ -267,6 +281,7 @@ main {
   }
   .figures {
     @media (min-width: 800px) {
+      align-items: flex-start;
       display: flex;
       justify-content: space-between;
       &.centered {
@@ -392,14 +407,17 @@ footer#footer {
   text-decoration-color: transparent;
   text-decoration-line: underline;
   text-underline-offset: 4px;
-  text-decoration-skip-ink: none;
+  text-decoration-skip-ink: all;
   text-decoration-style: solid;
-  text-decoration-thickness: 4px;
-  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out, text-underline-offset 0.25s ease-in-out;
+  text-decoration-thickness: 1px;
+  transition: color 0.25s ease-in-out, text-decoration-color 0.25s ease-in-out, text-decoration-thickness 0.25s ease-in-out;
   &:hover {
     color: var(--color-link-hover);
     text-decoration-color: var(--color-link-decoration-hover);
-    text-underline-offset: 2px;
+    text-decoration-thickness: 2px;
+  }
+  [class^="fa-"] {
+    margin-right: 0.2em;
   }
 }
 #mainmenuclose {
@@ -420,7 +438,7 @@ footer#footer {
   width: 3rem;
   z-index: 3;
   &:hover {
-    background-color: var(--color-link);
+    background-color: var(--color-link-hover);
     color: var(--color-bg);
   }
 }
