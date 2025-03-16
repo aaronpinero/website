@@ -360,7 +360,9 @@ footer#footer {
   p {
     margin-bottom: 0px;
     margin-top: 0px;
-    max-width: 23em;
+    &:not(.copyright) {
+      max-width: 23em;
+    }
   }
   p + p {
     margin-top: 1rem;
