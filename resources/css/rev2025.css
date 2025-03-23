@@ -8,6 +8,12 @@
   navigation: auto;
 }
 
+@property --banner-opacity {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0.25;
+}
+
 body {
   --color-fg-max: white;
   --color-backdrop: oklch(from var(--color-bg) l c h / 0.9);
@@ -23,6 +29,7 @@ body {
   --font-head: "League Gothic";
   --banner-mix-mode: overlay;
   --banner-opacity: 0.25;
+  
 }
 
 .slate-orange {

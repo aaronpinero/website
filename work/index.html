@@ -10,6 +10,11 @@
     <link rel="icon" href="favicon.png">
     <link rel="stylesheet" type="text/css" href="../resources/css/rev2025.css">
     <style>
+      @property --color-item-pattern {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: transparent;
+      }
       #main > header {
         display: flex;
         justify-content: center;
@@ -24,7 +29,7 @@
           font-size: clamp(4rem, calc(3.58rem + 2.1vw), 5rem);
         }
       }
-      #main > ul {
+      .work-items {
         --banner-opacity: 0.15 !important;
         display: grid;
         grid-gap: 2rem;
@@ -33,14 +38,23 @@
         margin: 0;
         padding: 0;
       }
-      #main > ul li {
+      .work-items li {
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+      }
+      .work-items li div {
         aspect-ratio: 4 / 3;
+        @media (min-width: 960px) {
+          aspect-ratio: 5 / 3;
+        }
+        cursor: pointer;
         padding: 1rem;
         place-content: center;
         position: relative;
         text-align: center;
       }
-      #main > ul li::before {
+      .work-items li div::before {
         background-size: 150%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -51,39 +65,75 @@
         opacity: var(--banner-opacity);
         position: absolute;
         top: 0px;
+        transition: --banner-opacity 0.25s ease-in-out, opacity 0.25s ease-in-out;
         width: 100%;
         z-index: -1;
       }
-      #main > ul li.jha::before {
+      .work-items li.jha div::before {
         background-image: url('../../work/jha/jha-logomark.svg');
       }
-      #main > ul li.owl::before {
+      .work-items li.owl div::before {
         background-image: url('../../work/owl/owl-logomark.svg');
       }
-      #main > ul li::after {
-        background-image: repeating-linear-gradient(45deg, var(--color-bg) 0px, var(--color-bg) 2px, transparent 0px, transparent 50%);
+      .work-items li div::after {
+        --color-item-pattern: var(--color-bg);
+        background-image: repeating-linear-gradient(45deg, var(--color-item-pattern) 0px, var(--color-item-pattern) 2px, transparent 0px, transparent 50%);
         background-size: 8px 8px;
+        background-position: top 0% left 0%;
         background-repeat: repeat;
         content: "";
         height: 100%;
         left: 0px;
         position: absolute;
         top: 0px;
+        transition: --color-item-pattern 0.25s ease-out, background-position 0.25s ease-in-out;
         width: 100%;
         z-index: 0;
       }
-      #main > ul li a,
-      #main > ul li span {
+      .work-items li::after {
+        background-color: var(--color-fg);
+        content: "";
+        height: 100%;
+        left: 0;
+        mix-blend-mode: soft-light;
+        position: absolute;
+        top: 0;
+        transform: translateX(-50%) rotate(-45deg) scaleX(2) scaleY(0);
+        transform-origin: top center;
+        transition: transform 0.25s ease-in-out;
+        width: 100%;
+        z-index: 5;
+      }
+      .work-items li:hover::after {
+        transform: translateX(-50%) rotate(-45deg) scaleX(2) scaleY(1);
+      }
+      .work-items li:hover div {
+        --banner-opacity: 0.3;
+      }
+      .work-items li:hover div::before {
+      }
+      .work-items li:hover div::after {
+        /* --color-item-pattern: transparent; */
+        background-position: top 100% left 100%;
+      }
+      .work-items li a,
+      .work-items li span {
         display: block;
         position: relative;
         z-index: 2;
       }
-      #main > ul li a {
+      .work-items li a {
         font-family: var(--font-head);
         font-size: clamp(2.25rem, calc(1.87rem + 1.88vw), 3rem);
         letter-spacing: 0.01em;
         line-height: 1;
         text-transform: uppercase;
+      }
+      .work-items li span {
+        font-size: 1rem;
+        font-style: italic;
+        line-height: 1.25;
+        margin-top: 0.5rem;
       }
     </style>
   </head>
@@ -120,10 +170,12 @@
         </div>
         <h1>Work</h1>
       </header>
-      <ul>
+      <ul class="work-items">
         <li class="jha">
+          <div>
             <a href="work-jha.html">Jeffrey Hoffman & Associates</a>
             <span class="tags">Branding & Identity, Print Design, Web Design</span>
+          </div>
         </li>
         <li class="owl">
           <div>
