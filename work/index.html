@@ -102,7 +102,7 @@
         transform-origin: top center;
         transition: transform 0.25s ease-in-out;
         width: 100%;
-        z-index: 5;
+        z-index: 0;
       }
       .work-items li:hover::after {
         transform: translateX(-50%) rotate(-45deg) scaleX(2) scaleY(1);
@@ -116,6 +116,9 @@
         /* --color-item-pattern: transparent; */
         background-position: top 100% left 100%;
       }
+      .work-items li:hover a {
+        color: var(--color-link-hover);
+      }
       .work-items li a,
       .work-items li span {
         display: block;
@@ -128,6 +131,7 @@
         letter-spacing: 0.01em;
         line-height: 1;
         text-transform: uppercase;
+        text-decoration: none !important;
       }
       .work-items li span {
         font-size: 1rem;
@@ -226,6 +230,15 @@
       });
       mainmenuclose.addEventListener('click', function(e){
         mainmenu.close();
+      });
+      
+      var workitems = document.querySelectorAll('.work-items li');
+      workitems.forEach((item) => {
+        item.addEventListener('click', function(e){
+          e.preventDefault();
+          var url = this.querySelector('a').getAttribute('href');
+          window.location.href = url;
+        });
       });
     </script>
   </body>
