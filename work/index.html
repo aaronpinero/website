@@ -30,7 +30,6 @@
         }
       }
       .work-items {
-        --banner-opacity: 0.15 !important;
         display: grid;
         grid-gap: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(max(min(100%,360px),40vw), 1fr));
@@ -55,6 +54,7 @@
         text-align: center;
       }
       .work-items li div::before {
+        --banner-opacity: 0.2;
         background-size: 150%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -65,7 +65,7 @@
         opacity: var(--banner-opacity);
         position: absolute;
         top: 0px;
-        transition: --banner-opacity 0.25s ease-in-out, opacity 0.25s ease-in-out;
+        transition: background-size 0.33s ease-in-out;
         width: 100%;
         z-index: -1;
       }
@@ -86,7 +86,6 @@
         left: 0px;
         position: absolute;
         top: 0px;
-        transition: --color-item-pattern 0.25s ease-out, background-position 0.25s ease-in-out;
         width: 100%;
         z-index: 0;
       }
@@ -100,21 +99,15 @@
         top: 0;
         transform: translateX(-50%) rotate(-45deg) scaleX(2) scaleY(0);
         transform-origin: top center;
-        transition: transform 0.25s ease-in-out;
+        transition: transform 0.33s ease-in-out;
         width: 100%;
         z-index: 0;
       }
       .work-items li:hover::after {
-        transform: translateX(-50%) rotate(-45deg) scaleX(2) scaleY(1);
-      }
-      .work-items li:hover div {
-        --banner-opacity: 0.3;
+        transform: translateX(-50%) rotate(-45deg) scaleX(2) scaleY(2);
       }
       .work-items li:hover div::before {
-      }
-      .work-items li:hover div::after {
-        /* --color-item-pattern: transparent; */
-        background-position: top 100% left 100%;
+        background-size: 133%;
       }
       .work-items li:hover a {
         color: var(--color-link-hover);
