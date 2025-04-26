@@ -8,12 +8,17 @@
   --color-fg: oklch(0.72 0.13 83);
 }
 
+.hsl {
+  --color-bg: oklch(0.32 0.04 257);
+  --color-fg: oklch(0.73 0.14 53);
+}
+
 figure {
   margin-bottom: 2rem;
   margin-left: 0;
   margin-right: 0;
   margin-top: 2rem;
-  img {
+  img, video {
     box-sizing: border-box;
     background-image: repeating-linear-gradient(45deg, var(--color-fg-pattern) 0px, var(--color-fg-pattern) 1px, transparent 0px, transparent 50%);
     background-repeat: repeat;

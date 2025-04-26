@@ -161,6 +161,7 @@ h2 {
 }
 
 main {
+  text-wrap: pretty;
   header {
     text-align: center;
     h1 {
