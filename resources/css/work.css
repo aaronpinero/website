@@ -11,6 +11,7 @@
 .hsl {
   --color-bg: oklch(0.32 0.04 257);
   --color-fg: oklch(0.73 0.14 53);
+  --banner-opacity: 0.20;
 }
 
 figure {
@@ -105,6 +106,11 @@ main {
     }
     &.owl::before {
       background-image: url('../../work/owl/owl-logomark.svg');
+    }
+    &.hsl::before {
+      background-image: url('../../work/hsl/hsl-logo.svg');
+      background-size: auto 400%;
+      background-position: top 33% left 15%;
     }
     &::after {
       background-image: repeating-linear-gradient(45deg, var(--color-bg) 0px, var(--color-bg) 2px, transparent 0px, transparent 50%);

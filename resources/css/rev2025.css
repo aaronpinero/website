@@ -11,7 +11,6 @@
 @property --banner-opacity {
   syntax: "<number>";
   inherits: false;
-  initial-value: 0.25;
 }
 
 body {
@@ -189,10 +188,13 @@ main {
       z-index: 1;
     }
   }
-  & > :is(h2,p) {
+  & > :is(h2,p,ul) {
     margin-left: auto;
     margin-right: auto;
     max-width: 45rem;
+  }
+  ul li + li {
+    margin-top: 0.5rem;
   }
 }
 

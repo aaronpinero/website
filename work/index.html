@@ -65,7 +65,7 @@
         opacity: var(--banner-opacity);
         position: absolute;
         top: 0px;
-        transition: background-size 0.33s ease-in-out;
+        transition: background-size 0.33s ease-in-out, background-position 0.33s ease-in-out;
         width: 100%;
         z-index: -1;
       }
@@ -74,6 +74,11 @@
       }
       .work-items li.owl div::before {
         background-image: url('../../work/owl/owl-logomark.svg');
+      }
+      .work-items li.hsl div::before {
+        background-image: url('../../work/hsl/hsl-logo.svg');
+        background-position: top 30% left 10%;
+        background-size: auto 400%;
       }
       .work-items li div::after {
         --color-item-pattern: var(--color-bg);
@@ -108,6 +113,10 @@
       }
       .work-items li:hover div::before {
         background-size: 133%;
+      }
+      .work-items li.hsl:hover div::before {
+        background-position: top 30% left 9%;
+        background-size: auto 333%;
       }
       .work-items li:hover a {
         color: var(--color-link-hover);
