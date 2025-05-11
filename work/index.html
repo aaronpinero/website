@@ -34,13 +34,17 @@
         grid-gap: 2rem;
         grid-template-columns: repeat(auto-fit, minmax(max(min(100%,360px),40vw), 1fr));
         list-style: none;
-        margin: 0;
+        margin: 0 auto;
+        max-width: 90rem;
         padding: 0;
       }
       .work-items li {
         cursor: pointer;
         overflow: hidden;
         position: relative;
+      }
+      .work-items li + li {
+        margin-top: 0px;
       }
       .work-items li div {
         aspect-ratio: 4 / 3;
@@ -158,6 +162,9 @@
               <a href="/work/index.html" class="active">Work</a>
             </li>
             <li>
+              <a href="/resume/index.html">Resume</a>
+            </li>
+            <li>
               <a href="/posts/index.html">Posts</a>
             </li>
           </ul>
@@ -205,7 +212,7 @@
     </main>
     <footer id="footer">
       <div>
-        <p><strong>Aaron Pinero</strong> is an experienced <span class="no-break">graphic designer</span>, <span class="no-break">web developer</span>, and <span class="no-break">technical lead</span>.</p>
+        <p><strong>Aaron Pinero</strong> is a <span class="no-break">graphic designer</span>, <span class="no-break">web developer</span>, and <span class="no-break">technical lead</span>.</p>
         <p class="copyright small">&copy; Copyright 2025 by Aaron Pinero.</p>
       </div>
       <ul>
@@ -213,7 +220,7 @@
           <a class="codepen" href="https://codepen.io/aaronpinero"><i class="fa-brands fa-codepen"></i>CodePen</a>
         </li>
         <li>
-          <a class="drupal" href="https://drupal.org/aaronpinero"><i class="fa-brands fa-drupal"></i>Drupal</a>
+          <a class="drupal" href="https://www.drupal.org/u/aaronpinero"><i class="fa-brands fa-drupal"></i>Drupal</a>
         </li>
         <li>
           <a class="github" href="https://github.com/aaronpinero"><i class="fa-brands fa-github"></i>GitHub</a>

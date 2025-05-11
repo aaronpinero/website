@@ -1,6 +1,6 @@
 @import "normalize.css" layer(normalize);
 @import "../fonts/league/stylesheet.css" layer(fonts);
-@import "../fonts/raleway/stylesheet.css" layer(fonts);
+@import "../fonts/ibm-plex-sans/css/ibm-plex-sans-default.min.css" layer(fonts);
 @import "../fonts/fontawesome/css/fontawesome.min.css" layer(fonts);
 @import "../fonts/fontawesome/css/brands.min.css" layer(fonts);
 @import "../fonts/fontawesome/css/sharp-regular.min.css" layer(fonts);
@@ -24,7 +24,7 @@ body {
   --color-link-decoration: oklch(from var(--color-fg) l c h / 0.5);
   --color-link-hover: oklch(from var(--color-fg) calc(l + 0.1) calc(c - 0.02) h);
   --color-link-decoration-hover: oklch(from var(--color-fg) calc(l + 0.1) calc(c - 0.02) h);
-  --font-body: Raleway, Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
+  --font-body: "IBM Plex Sans", Avenir, Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif;
   --font-head: "League Gothic";
   --banner-mix-mode: overlay;
   --banner-opacity: 0.25;
@@ -63,6 +63,7 @@ body {
   color: var(--color-text-body);
   font-family: var(--font-body);
   font-size: 1.25rem;
+  font-weight: 300;
   line-height: 1.5;
   margin: 0px;
   padding: clamp(1rem, calc(4.21vw + 2.5px), 3rem);
@@ -94,12 +95,25 @@ a[href] {
     margin-right: 0.2em;
   }
 }
-
+strong {
+  font-weight: 700;
+}
 h2 {
   color: var(--color-fg-max);
   font-family: var(--font-head);
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 400;
+  line-height: 1.125;
+  margin-bottom: 0.5em;
+}
+h3 {
+  font-size: 1.875rem;
+  line-height: 1.125;
+  margin-bottom: 0.5em;
+}
+h4 {
+  font-size: 1.5rem;
+  line-height: 1.125;
   margin-bottom: 0.5em;
 }
 
@@ -274,7 +288,7 @@ footer#footer {
     margin-bottom: 0px;
     margin-top: 0px;
     &:not(.copyright) {
-      max-width: 23em;
+      max-width: 18em;
       @media (max-width:799px) {
         margin-left: auto;
         margin-right: auto;

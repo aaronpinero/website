@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Aaron Pinero / Resume</title>
+    <meta name="author" content="Aaron Pinero" />
+    <meta name="description" content="Resume for Aaron Pinero." />
+    <meta name="keywords" content="TBD" />
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="../resources/css/rev2025.css">
+    <style>
+      @property --color-item-pattern {
+        syntax: "<color>";
+        inherits: false;
+        initial-value: transparent;
+      }
+      #main {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 70rem;
+        row-gap: 3rem;
+        @media (min-width: 768px) {
+          column-gap: 4rem;
+          grid-template-columns: 2fr 1.25fr;
+        }
+        header {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 4rem;
+          margin-top: 4rem;
+          @media (min-width: 768px) {
+            grid-column: 1 / 3;
+          }
+          .breadcrumb ul::after {
+            @media (min-width: 640px) {
+              content:"/"
+            }
+          }
+          h1 {
+            font-size: clamp(4rem, calc(3.58rem + 2.1vw), 5rem);
+          }
+        }
+        section {
+          h2, h3, p, dl, dt, dd, ul {
+            margin-top: 0px;
+          }
+          h2 {
+            padding-top: 2rem;
+            position: relative;
+            text-transform: uppercase;
+            &::before {
+              background-image: repeating-linear-gradient(45deg, var(--color-text-mute) 0px, var(--color-text-mute) 1px, transparent 0px, transparent 50%);
+              background-repeat: repeat;
+              background-size: 8px 8px;
+              content: "";
+              height: 8px;
+              position: absolute;
+              top: 0px;
+              width: 100%;
+            }
+          }
+          h3 {
+            font-weight: 500;
+          }
+          dt {
+            font-family: var(--font-head);
+            font-size: 2.125rem;
+            font-weight: 400;
+            line-height: 1.125;
+            margin-bottom: 0.25em;
+          }
+          dd {
+            margin-bottom: 1.5rem;
+            margin-left: 0px;
+          }
+          h3 {
+            font-size: 1.5rem;
+          }
+          &#experience {
+            @media (min-width: 768px) {
+              grid-column: 1 / 3;
+            }
+            dl {
+              @media (min-width:992px) {
+                display: grid;
+                grid-template-columns: 1fr 3fr;
+                column-gap: 4rem;
+                row-gap: 1rem;
+              }
+            }
+          }
+          &#previous {
+            @media (min-width: 768px) {
+              grid-column: 1 / 2;
+            }
+          }
+          &#education {
+            @media (min-width: 768px) {
+              grid-column: 1 / 2;
+            }
+          }
+          &#skills {
+            @media (min-width: 768px) {
+              grid-column: 2 / 3;
+              grid-row: 3 / 5;
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body class="slate-orange">
+    <a class="visually-hidden" href="#main">Skip to main content</a>
+    <header id="header">
+      <h1 class="logo">Aaron Pinero</h1>
+      <button id="mainmenubtn"><i class="fa-regular fa-bars"></i>Menu</button>
+      <dialog id="mainmenu">
+        <nav>
+          <ul>
+            <li>
+              <a href="/index.html">Home</a>
+            </li>
+            <li>
+              <a href="/work/index.html">Work</a>
+            </li>
+            <li>
+              <a href="/resume/index.html" class="active">Resume</a>
+            </li>
+            <li>
+              <a href="/posts/index.html">Posts</a>
+            </li>
+          </ul>
+          <button id="mainmenuclose"><i class="fa-sharp fa-regular fa-xmark"></i><span class="visually-hidden">Close</span></button>
+        </nav>
+      </dialog>
+    </header>
+    <main id="main">
+      <header>
+        <div class="breadcrumb">
+          <ul>
+            <li>
+              <a href="/index.html">Aaron Pinero</a>
+            </li>
+          </ul>
+        </div>
+        <h1>Resume</h1>
+      </header>
+      <section id="experience">
+        <h2>Experience</h2>
+        <dl>
+          <dt>Columbia University, 2020–Present</dt>
+          <dd>
+            <h3>Web Services Manager, Augustus C. Long Health Sciences Library</h3>
+            <ul>
+              <li>Enhanced the website search experience by adding results from external sources; wrote a custom Drupal module to integrate with multiple external APIs and provide results to the user without negatively impacting website performance. The enhanced search increases the likelihood of the user receiving a desired result.</li>
+              <li>Wrote a custom Drupal module to integrate the Library website contact forms with Zendesk. The new contact system made inquiries easier for users, directed inquiries more reliably to the appropriate staff, and allowed for more useful ticket analytics.</li>
+              <li>Improved access to high-use library resources by integrating the Library website with Google Analytics outbound link reports; created a display of most visited resources that evolves according to current user interests. Users are able to more quickly access needed resources as demonstrated by a decrease in pages per visit and an increase in outbound link events on the Library home page.</li>
+              <li>Conceived, designed, and developed an institutional research profile (bibliography) for Columbia University Irving Medical Center and its constituent academic units and research centers. This was the first successfully launched resource of its kind at the Medical Center. Data for the system was collected using third-party APIs and natural language processing to minimize manual data processing.</li>
+              <li>Improved accessibility of the Library websites through staff education, automated accessibility monitoring, and audits of key website user interface elements by third party experts. Implemented accessibility improvements according to WCAG recommendations.</li>
+            </ul>
+          </dd>
+          <dt>Columbia University, 2013–2020</dt>
+          <dd>
+            <h3>Director of Web Development, Columbia College IT</h3>
+            <ul>
+              <li>Migrated websites from Drupal 5, Drupal 6, and WordPress to Drupal 7 to improve security facilitate website maintenance, and provide better features to content creators.</li>
+              <li>Organized outdated and inconsistent brand assets and design standards into a modern brand guideline; developed relationships with other designers and brand managers across the university to insure better institutional brand consistency. This work lead to participation in a university-wide efforts to establish accessibility guidelines and a design system.</li>
+              <li>Implemented modern front-end development practices including responsive design, the use of build tools (e.g., Gulp, Grunt, Sass), and the development of a shared Drupal theme framework. This resulted in a faster development cycle, improved visual consistency across more than a dozen websites, and ensured mobile responsiveness for all websites.</li>
+              <li>Led the design and development of multiple websites providing communication on key initiatives including strategic planning, student wellness, alumni engagement, and global programs. These websites provided tailored web publishing solutions for marketing and administrative staff, facilitating the effective communication of administrative priorities.</li>
+            </ul>
+          </dd>
+        </dl>
+      </section>
+      <section id="previous">
+        <h2>Previous Experience</h2>
+        <dl>
+          <dt>Columbia University, 2011–2013</dt>
+          <dd>
+            <h3>Associate Director, Web Publishing & Design, Columbia College IT</h3>
+            <ul>
+              <li>Managed multiple concurrent website projects</li>
+              <li>Developed and maintained nearly two dozen Drupal websites</li>
+              <li>Trained and supported Drupal users</li>
+              <li>Mentored student interns</li>
+            </ul>
+          </dd>
+          <dt>webslingerz Inc., 2007–2010</dt>
+          <dd>
+            <h3>Creative Director</h3>
+            <ul>
+              <li>Managed digital media design and development projects</li>
+              <li>Authored proposals and engaged in new business development</li>
+              <li>Provided technical expertise to clients</li>
+              <li>Performed web design and front-end development tasks</li>
+            </ul>
+          </dd>
+          <dt>webslingerz Inc., 1998–2006</dt>
+          <dd>
+            <h3>Media Designer</h3>
+            <ul>
+              <li>Designed and produced print and interactive media</li>
+              <li>Developed custom HTML, JavaScript, CSS, and ActionScript</li>
+              <li>Built websites using open-source and custom CMS</li>
+              <li>Participated in project planning</li>
+            </ul>
+          </dd>
+        </dl>
+      </section>
+      <section id="education">
+        <h2>Education</h2>
+        <dl>
+          <dt>Pratt Institute</dt>
+          <dd>
+            <h3>Master of Science, Communications Design</h3>
+            <p>Awarded for Excellence in Academic Achievement</p>
+          </dd>
+          <dt>Duke University</dt>
+          <dd>
+            <h3>Bachelor of Science in Engineering, Biomedical Engineering</h3>
+            <p>Graduated cum laude and with departmental honors</p>
+          </dd>
+        </dl>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <dl>
+          <dt>Web Development</dt>
+          <dd>HTML, CSS, JavaScript (ES6, jQuery, Vue, Alpine, Node), Responsive Design, Web Accessibility (WCAG)</dd>
+          <dt>Design System Development</dt>
+          <dd>atomic design principles, Fractal</dd>
+          <dt>Graphic Design</dt>
+          <dd>Adobe Creative Suite, Affinity Creative Suite</dd>
+          <dt>Drupal Development</dt>
+          <dd>Site building, configuration management, custom module development, custom theme development</dd>
+          <dt>Programming</dt>
+          <dd>PHP (intermediate), Python (beginner)</dd>
+          <dt>Version Control</dt>
+          <dd>Git (Bitbucket, GitHub, GitLab)</dd>
+          <dt>Data & Analytics</dt>
+          <dd>Google Analytics (Data analysis, custom reporting, API integration), Looker Studio (beginner), Medical Research Database APIs (PubMed, Web of Science, Scopus)</dd>
+          <dt>Database Management</dt>
+          <dd>MySQL</dd>
+          <dt>Customer Support Platforms</dt>
+          <dd>Zendesk, Jira Service Desk</dd>
+          <dt>Natural Language Processing</dt>
+          <dd>spaCy (beginner)</dd>
+        </dl>
+      </section>
+    </main>
+    <footer id="footer">
+      <div>
+        <p><strong>Aaron Pinero</strong> is a <span class="no-break">graphic designer</span>, <span class="no-break">web developer</span>, and <span class="no-break">technical lead</span>.</p>
+        <p class="copyright small">&copy; Copyright 2025 by Aaron Pinero.</p>
+      </div>
+      <ul>
+        <li>
+          <a class="codepen" href="https://codepen.io/aaronpinero"><i class="fa-brands fa-codepen"></i>CodePen</a>
+        </li>
+        <li>
+          <a class="drupal" href="https://www.drupal.org/u/aaronpinero"><i class="fa-brands fa-drupal"></i>Drupal</a>
+        </li>
+        <li>
+          <a class="github" href="https://github.com/aaronpinero"><i class="fa-brands fa-github"></i>GitHub</a>
+        </li>
+        <li>
+          <a class="linkedin" href="https://linkedin.com/in/aaronpinero"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+        </li>
+      </ul>
+    </footer>
+    <script>
+      var mainmenubtn = document.querySelector('#mainmenubtn');
+      var mainmenuclose = document.querySelector('#mainmenuclose');
+      var mainmenu = document.querySelector('#mainmenu');
+      mainmenubtn.addEventListener('click', function(e){
+        mainmenu.showModal();
+      });
+      mainmenuclose.addEventListener('click', function(e){
+        mainmenu.close();
+      });
+      
+      var workitems = document.querySelectorAll('.work-items li');
+      workitems.forEach((item) => {
+        item.addEventListener('click', function(e){
+          e.preventDefault();
+          var url = this.querySelector('a').getAttribute('href');
+          window.location.href = url;
+        });
+      });
+    </script>
+  </body>
+</html>
