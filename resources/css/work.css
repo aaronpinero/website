@@ -146,6 +146,7 @@ main {
     }
     .tags {
       font-style: italic;
+      font-weight: 600;
     }
   }
   .figures.row {
