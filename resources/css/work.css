@@ -87,6 +87,7 @@ main {
     padding: clamp(4rem, calc(8.42vw + 2.32rem), 8rem) clamp(1rem, calc(4.21vw + 2.5px), 3rem);
     position: relative;
     text-align: center;
+
     &::before {
       background-size: max(640px, 125%);
       background-position: top 35% center;

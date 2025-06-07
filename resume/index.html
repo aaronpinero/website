@@ -24,13 +24,14 @@
         row-gap: 3rem;
         @media (min-width: 768px) {
           column-gap: 4rem;
-          grid-template-columns: 2fr 1.25fr;
+          grid-template-columns: 1fr 1fr;
         }
         header {
           display: flex;
           justify-content: center;
-          margin-bottom: 4rem;
-          margin-top: 4rem;
+          margin: 0px;
+          padding-bottom: 4rem;
+          padding-top: 4rem;
           @media (min-width: 768px) {
             grid-column: 1 / 3;
           }
@@ -48,7 +49,6 @@
             margin-top: 0px;
           }
           h2 {
-            color: var(--color-fg-pattern);
             font-size: 3rem;
             margin-bottom: 1.5rem;
             padding-bottom: 1rem;
@@ -61,54 +61,56 @@
               bottom: 0px;
               content: "";
               height: 8px;
+              left: 0;
               position: absolute;
               width: 100%;
             }
           }
           h3 {
+            font-size: 1.5rem;
             font-weight: 500;
           }
           dt {
-            font-family: var(--font-head);
-            font-size: 2.125rem;
-            font-weight: 400;
+            font-size: 1.75rem;
+            font-weight: 700;
             line-height: 1.125;
             margin-bottom: 0.25em;
           }
           dd {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             margin-left: 0px;
-          }
-          h3 {
-            font-size: 1.5rem;
           }
           &#experience {
             @media (min-width: 768px) {
               grid-column: 1 / 3;
             }
-            dl {
-              @media (min-width:992px) {
-                display: grid;
-                grid-template-columns: 1fr 3fr;
-                column-gap: 4rem;
-                row-gap: 1rem;
+            ul {
+              margin-top: 1rem;
+              @media (min-width: 768px) {
+                column-count: 2;
+                column-gap: 4rem !important;
+              }
+              li {
+                break-inside: avoid;
+                margin-top: 0px !important;
+                padding-bottom: 0.5rem;
               }
             }
           }
           &#previous {
             @media (min-width: 768px) {
               grid-column: 1 / 2;
+              grid-row: span 3;
             }
           }
           &#education {
             @media (min-width: 768px) {
-              grid-column: 1 / 2;
+              grid-column: 2 / 3;
             }
           }
           &#skills {
             @media (min-width: 768px) {
               grid-column: 2 / 3;
-              grid-row: 3 / 5;
             }
           }
         }
@@ -158,27 +160,27 @@
           <dd>
             <h3>Web Services Manager, Augustus C. Long Health Sciences Library</h3>
             <ul>
-              <li>Enhanced the website search experience by adding results from external sources; wrote a custom Drupal module to integrate with multiple external APIs and provide results to the user without negatively impacting website performance. The enhanced search increases the likelihood of the user receiving a desired result.</li>
-              <li>Wrote a custom Drupal module to integrate the Library website contact forms with Zendesk. The new contact system made inquiries easier for users, directed inquiries more reliably to the appropriate staff, and allowed for more useful ticket analytics.</li>
-              <li>Improved access to high-use library resources by integrating the Library website with Google Analytics outbound link reports; created a display of most visited resources that evolves according to current user interests. Users are able to more quickly access needed resources as demonstrated by a decrease in pages per visit and an increase in outbound link events on the Library home page.</li>
-              <li>Conceived, designed, and developed an institutional research profile (bibliography) for Columbia University Irving Medical Center and its constituent academic units and research centers. This was the first successfully launched resource of its kind at the Medical Center. Data for the system was collected using third-party APIs and natural language processing to minimize manual data processing.</li>
-              <li>Improved accessibility of the Library websites through staff education, automated accessibility monitoring, and audits of key website user interface elements by third party experts. Implemented accessibility improvements according to WCAG recommendations.</li>
+              <li><strong>Enhanced the website search experience</strong> by adding results from external sources; wrote a custom Drupal module to integrate with multiple external APIs and provide results to the user without negatively impacting website performance. The enhanced search increases the likelihood of the user receiving a desired result.</li>
+              <li><strong>Integrated the Library website contact forms with Zendesk</strong> by creating a custom Drupal module. The new contact system made inquiries easier for users, directed inquiries more reliably to the appropriate staff, and allowed for more useful ticket analytics.</li>
+              <li><strong>Improved access to high-use library resources</strong> by integrating the Library website with Google Analytics outbound link reports; created a display of most visited resources that evolves according to current user interests. Users are able to more quickly access needed resources as demonstrated by a decrease in pages per visit and an increase in outbound link events on the Library home page.</li>
+              <li><strong>Conceived, designed, and developed an institutional research profile</strong> (bibliography) for Columbia University Irving Medical Center and its constituent academic units and research centers. This was the first successfully launched resource of its kind at the Medical Center. Data for the system was collected using third-party APIs and natural language processing to minimize manual data processing.</li>
+              <li><strong>Improved accessibility of the Library websites</strong> through staff education, automated accessibility monitoring, and audits of key website user interface elements by third party experts. Implemented accessibility improvements according to WCAG recommendations.</li>
             </ul>
           </dd>
           <dt>Columbia University, 2013–2020</dt>
           <dd>
             <h3>Director of Web Development, Columbia College IT</h3>
             <ul>
-              <li>Migrated websites from Drupal 5, Drupal 6, and WordPress to Drupal 7 to improve security facilitate website maintenance, and provide better features to content creators.</li>
-              <li>Organized outdated and inconsistent brand assets and design standards into a modern brand guideline; developed relationships with other designers and brand managers across the university to insure better institutional brand consistency. This work lead to participation in a university-wide efforts to establish accessibility guidelines and a design system.</li>
-              <li>Implemented modern front-end development practices including responsive design, the use of build tools (e.g., Gulp, Grunt, Sass), and the development of a shared Drupal theme framework. This resulted in a faster development cycle, improved visual consistency across more than a dozen websites, and ensured mobile responsiveness for all websites.</li>
-              <li>Led the design and development of multiple websites providing communication on key initiatives including strategic planning, student wellness, alumni engagement, and global programs. These websites provided tailored web publishing solutions for marketing and administrative staff, facilitating the effective communication of administrative priorities.</li>
+              <li><strong>Organized brand assets and design standards</strong> into a modern brand guideline; developed relationships with other designers and brand managers across the university to insure better institutional brand consistency. This work lead to participation in a university-wide efforts to establish accessibility guidelines and a design system.</li>
+              <li><strong>Implemented modern front-end development practices</strong> including responsive design, the use of build tools (e.g., Gulp, Grunt, Sass), and the development of a shared Drupal theme framework. This resulted in a faster development cycle, improved visual consistency across more than a dozen websites, and ensured mobile responsiveness for all websites.</li>
+              <li><strong>Led the design and development of multiple websites</strong> providing communication on key initiatives including strategic planning, student wellness, alumni engagement, and global programs. These websites provided tailored web publishing solutions for marketing and administrative staff, facilitating the effective communication of administrative priorities.</li>
+              <li><strong>Improved security and long-term maintenance of websites</strong> by migrating from older platforms to Drupal 7. The migrated websites also provided better features for content creators.</li>
             </ul>
           </dd>
         </dl>
       </section>
       <section id="previous">
-        <h2>Previous Experience</h2>
+        <h2>Prior Experience</h2>
         <dl>
           <dt>Columbia University, 2011–2013</dt>
           <dd>
@@ -229,28 +231,17 @@
       </section>
       <section id="skills">
         <h2>Skills</h2>
-        <dl>
-          <dt>Web Development</dt>
-          <dd>HTML, CSS, JavaScript (ES6, jQuery, Vue, Alpine, Node), Responsive Design, Web Accessibility (WCAG)</dd>
-          <dt>Design System Development</dt>
-          <dd>atomic design principles, Fractal</dd>
-          <dt>Graphic Design</dt>
-          <dd>Adobe Creative Suite, Affinity Creative Suite</dd>
-          <dt>Drupal Development</dt>
-          <dd>Site building, configuration management, custom module development, custom theme development</dd>
-          <dt>Programming</dt>
-          <dd>PHP (intermediate), Python (beginner)</dd>
-          <dt>Version Control</dt>
-          <dd>Git (Bitbucket, GitHub, GitLab)</dd>
-          <dt>Data & Analytics</dt>
-          <dd>Google Analytics (Data analysis, custom reporting, API integration), Looker Studio (beginner), Medical Research Database APIs (PubMed, Web of Science, Scopus)</dd>
-          <dt>Database Management</dt>
-          <dd>MySQL</dd>
-          <dt>Customer Support Platforms</dt>
-          <dd>Zendesk, Jira Service Desk</dd>
-          <dt>Natural Language Processing</dt>
-          <dd>spaCy (beginner)</dd>
-        </dl>
+        <ul>
+          <li>Web/Front-End Development</li>
+          <li>Graphic Design</li>
+          <li>Branding & Identity</li>
+          <li>UI/UX Design</li>
+          <li>Design System Development</li>
+          <li>Drupal Site Building</li>
+          <li>Drupal Theme Development</li>
+          <li>Drupal Module Development</li>
+          <li>Project Management</li>
+        </ul>
       </section>
     </main>
     <footer id="footer">
